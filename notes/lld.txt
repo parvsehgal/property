@@ -1,0 +1,13 @@
+for property card{
+  image of the property as well
+
+  Name --like the zen,the survya
+  Location
+  Projected annual returns -- like 8.55%,8.66%
+  Min. investment --like 1Lakhs , 2Lakhs
+  Property Type -- like 1BHK,2BHK,Villa
+
+  view details button
+}
+
+

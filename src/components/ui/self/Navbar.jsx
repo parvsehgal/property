@@ -1,44 +1,67 @@
-// components/Navbar.js
+import { motion } from "framer-motion";
+import { Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import Image from "next/image";
 
-const Navbar = () => {
+export default function Navbar({ isLoaded = true }) {
   return (
-    <nav className="w-full bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo on the left */}
-          <div className="flex items-center space-x-3">
-            <div className="h-8 w-8 bg-gray-100 border border-gray-200 flex items-center justify-center rounded">
-              <span className="text-gray-700 font-semibold">L</span>
-            </div>
-            <span className="text-gray-800 font-medium">Business Name</span>
-          </div>
+    <header className="bg-slate-900 py-6">
+      <div className="container mx-auto">
+        <nav className="flex justify-between items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-2"
+          >
+            <Building className="h-8 w-8 text-emerald-500" />
+            <span className="text-2xl font-bold text-white">
+              Wealth<span className="text-emerald-500">Property</span>
+            </span>
+          </motion.div>
 
-          {/* Navigation buttons in the middle */}
-          <div className="flex items-center">
-            {["Home", "Properties", "Learn", "Contact Us"].map((item) => (
-              <Button
-                key={item}
-                variant="ghost"
-                className="text-gray-600 hover:text-gray-900 hover:bg-gray-50 font-medium"
-              >
-                <Link href={`/${item}`}>{item}</Link>
-              </Button>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isLoaded ? { opacity: 1 } : {}}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="hidden md:flex space-x-8"
+          >
+            <a
+              href="#"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Properties
+            </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Investments
+            </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Analysis
+            </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              About
+            </a>
+          </motion.div>
 
-          {/* Login button on the right */}
-          <div>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-              Login
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={isLoaded ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            <Button className="bg-emerald-500 hover:bg-emerald-600">
+              Get Started
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}

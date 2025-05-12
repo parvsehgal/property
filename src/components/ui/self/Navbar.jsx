@@ -26,7 +26,7 @@ export default function Navbar({ isLoaded = true }) {
             className="hidden md:flex space-x-8"
           >
             <a
-              href="#"
+              href="/properties"
               className="text-gray-300 hover:text-white transition-colors"
             >
               Properties

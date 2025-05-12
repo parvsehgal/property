@@ -1,7 +1,7 @@
-// components/PropertyCard.js
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 
 const PropertyCard = ({ property }) => {
   const {
@@ -15,9 +15,9 @@ const PropertyCard = ({ property }) => {
   } = property;
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-shadow hover:shadow-lg">
+    <div className="bg-slate-900 rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/20">
       {/* Property Image */}
-      <div className="relative h-48 w-full">
+      <div className="relative h-48 w-full overflow-hidden">
         <Image
           src={imageUrl}
           alt={name}
@@ -25,57 +25,40 @@ const PropertyCard = ({ property }) => {
           objectFit="cover"
           className="transition-transform hover:scale-105 duration-300"
         />
+        <div className="absolute top-4 right-4 bg-emerald-500 text-white text-sm font-medium px-2 py-1 rounded">
+          {annualReturns}
+        </div>
       </div>
 
       {/* Property Details */}
-      <div className="p-5">
-        <h3 className="text-xl font-semibold text-gray-800 mb-1">{name}</h3>
-
-        <div className="flex items-center text-gray-500 mb-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 mr-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-          </svg>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
+        <div className="flex items-center text-gray-400 mb-4">
+          <MapPin className="h-4 w-4 mr-2 text-emerald-500" />
           <span className="text-sm">{location}</span>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-4">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-6">
           <div>
-            <p className="text-xs text-gray-500">Projected annual returns</p>
-            <p className="text-sm font-semibold text-green-600">
+            <p className="text-xs text-gray-500">Projected Annual Returns</p>
+            <p className="text-sm font-semibold text-emerald-500">
               {annualReturns}
             </p>
           </div>
-
           <div>
-            <p className="text-xs text-gray-500">Min. investment</p>
-            <p className="text-sm font-semibold">{minInvestment}</p>
+            <p className="text-xs text-gray-500">Min. Investment</p>
+            <p className="text-sm font-semibold text-white">{minInvestment}</p>
           </div>
-
           <div className="col-span-2">
             <p className="text-xs text-gray-500">Property Type</p>
-            <p className="text-sm font-semibold">{propertyType}</p>
+            <p className="text-sm font-semibold text-gray-300">
+              {propertyType}
+            </p>
           </div>
         </div>
 
         <Link href={`/properties/${id}`} passHref>
-          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+          <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white">
             View Details
           </Button>
         </Link>

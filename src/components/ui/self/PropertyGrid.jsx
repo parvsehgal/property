@@ -1,7 +1,5 @@
-// components/PropertyGrid.js
 import PropertyCard from "./PropertyCard";
-
-// Hardcoded data to simulate API response
+import { motion } from "framer-motion";
 const mockProperties = [
   {
     id: 1,
@@ -60,16 +58,57 @@ const mockProperties = [
 ];
 
 const PropertyGrid = () => {
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="py-8">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-        Featured Properties
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        className="mb-12"
+      >
+        <div className="flex justify-between items-end">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Featured <span className="text-emerald-500">Properties</span>
+            </h2>
+            <p className="mt-4 text-xl text-gray-300">
+              Explore our selection of high-yield investment opportunities
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {mockProperties.map((property) => (
-          <PropertyCard key={property.id} property={property} />
+          <motion.div
+            key={property.id}
+            variants={fadeIn}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+          >
+            <PropertyCard property={property} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

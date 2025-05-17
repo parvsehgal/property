@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Navbar({ isLoaded = true }) {
   return (
@@ -11,46 +12,45 @@ export default function Navbar({ isLoaded = true }) {
             initial={{ opacity: 0, x: -20 }}
             animate={isLoaded ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="flex items-center space-x-2"
           >
-            <Building className="h-8 w-8 text-emerald-500" />
-            <span className="text-2xl font-bold text-white">
-              Wealth<span className="text-emerald-500">Property</span>
-            </span>
+            <Link href="/" className="flex items-center space-x-2">
+              <Building className="h-8 w-8 text-emerald-500" />
+              <span className="text-2xl font-bold text-white">
+                Wealth<span className="text-emerald-500">Property</span>
+              </span>
+            </Link>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={isLoaded ? { opacity: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.5 }}
             className="hidden md:flex space-x-8"
           >
-            <a
+            <Link
               href="/properties"
               className="text-gray-300 hover:text-white transition-colors"
             >
               Properties
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-gray-300 hover:text-white transition-colors"
             >
               Investments
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-gray-300 hover:text-white transition-colors"
             >
               Analysis
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/contact"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              About
-            </a>
+              Contact Us
+            </Link>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={isLoaded ? { opacity: 1, x: 0 } : {}}

@@ -60,24 +60,24 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#111111]">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-4xl font-extrabold text-foreground mb-4">
             What Our{" "}
-            <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Clients</span>{" "}
+            <span className="bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent">Clients</span>{" "}
             Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Join thousands of successful investors and homebuyers who have grown their wealth with us
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 md:p-12 shadow-lg border border-emerald-100">
+          <div className="relative bg-gradient-to-br from-teal-900/20 to-teal-900/20 rounded-3xl p-8 md:p-12 shadow-lg border border-teal-800/30">
             {/* Quote Icon */}
             <div className="absolute top-6 left-6 opacity-20">
-              <Quote className="h-16 w-16 text-emerald-600" />
+              <Quote className="h-16 w-16 text-teal-400" />
             </div>
 
             {/* Navigation Buttons */}
@@ -86,7 +86,7 @@ export function TestimonialsSection() {
                 variant="outline"
                 size="sm"
                 onClick={prevTestimonial}
-                className="border-emerald-200 text-emerald-600 hover:bg-emerald-100"
+                className="border-teal-600 text-teal-400 hover:bg-teal-900/30"
               >
                 <ChevronLeft className="h-4 w-4" />
               </Button>
@@ -94,7 +94,7 @@ export function TestimonialsSection() {
                 variant="outline"
                 size="sm"
                 onClick={nextTestimonial}
-                className="border-emerald-200 text-emerald-600 hover:bg-emerald-100"
+                className="border-teal-600 text-teal-400 hover:bg-teal-900/30"
               >
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -110,13 +110,13 @@ export function TestimonialsSection() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-xl md:text-2xl text-gray-700 italic leading-relaxed max-w-3xl mx-auto">
+              <blockquote className="text-xl md:text-2xl text-foreground italic leading-relaxed max-w-3xl mx-auto">
                 "{testimonials[currentTestimonial].content}"
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center justify-center gap-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-card shadow-lg">
                   <Image
                     src={testimonials[currentTestimonial].avatar || "/placeholder.jpeg"}
                     alt={testimonials[currentTestimonial].name}
@@ -125,9 +125,9 @@ export function TestimonialsSection() {
                   />
                 </div>
                 <div className="text-left">
-                  <div className="font-bold text-gray-900 text-lg">{testimonials[currentTestimonial].name}</div>
-                  <div className="text-emerald-600 font-medium">{testimonials[currentTestimonial].role}</div>
-                  <div className="text-gray-500 text-sm">{testimonials[currentTestimonial].location}</div>
+                  <div className="font-bold text-foreground text-lg">{testimonials[currentTestimonial].name}</div>
+                  <div className="text-teal-400 font-medium">{testimonials[currentTestimonial].role}</div>
+                  <div className="text-muted-foreground text-sm">{testimonials[currentTestimonial].location}</div>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export function TestimonialsSection() {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentTestimonial ? "bg-emerald-600 w-8" : "bg-emerald-200 hover:bg-emerald-300"
+                    index === currentTestimonial ? "bg-teal-500 w-8" : "bg-teal-700 hover:bg-teal-600"
                   }`}
                 />
               ))}
@@ -152,10 +152,10 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className={`bg-white rounded-2xl p-6 shadow-lg border transition-all duration-300 cursor-pointer ${
+              className={`bg-card rounded-2xl p-6 shadow-lg border transition-all duration-300 cursor-pointer ${
                 index === currentTestimonial
-                  ? "border-emerald-500 shadow-emerald-100"
-                  : "border-gray-200 hover:border-emerald-300 hover:shadow-xl"
+                  ? "border-teal-500 shadow-teal-900/20"
+                  : "border-border hover:border-teal-600 hover:shadow-xl"
               }`}
               onClick={() => setCurrentTestimonial(index)}
             >
@@ -169,8 +169,8 @@ export function TestimonialsSection() {
                   />
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">{testimonial.name}</div>
-                  <div className="text-emerald-600 text-sm">{testimonial.role}</div>
+                  <div className="font-bold text-foreground">{testimonial.name}</div>
+                  <div className="text-teal-400 text-sm">{testimonial.role}</div>
                 </div>
               </div>
               <div className="flex gap-1 mb-3">
@@ -178,7 +178,7 @@ export function TestimonialsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-gray-600 text-sm line-clamp-3">{testimonial.content}</p>
+              <p className="text-muted-foreground text-sm line-clamp-3">{testimonial.content}</p>
             </div>
           ))}
         </div>

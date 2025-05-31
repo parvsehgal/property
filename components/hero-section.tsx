@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -20,27 +21,27 @@ export function HeroSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/50" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 lg:px-6 pt-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Find Your Dream{" "}
-                <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent">
                   Property
                 </span>{" "}
                 Today
               </h1>
-              <p className="text-xl text-gray-600 max-w-lg">
+              <p className="text-xl text-muted-foreground max-w-lg">
                 Discover premium properties with exclusive access to high-yield investment opportunities vetted by
                 industry experts.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+            <div className="bg-card rounded-2xl shadow-xl p-6 border border-border">
               <div className="flex gap-2 mb-6">
                 {[
                   { id: "buy", label: "Buy", icon: Home },
@@ -53,7 +54,7 @@ export function HeroSection() {
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
                       searchType === id
                         ? "bg-teal-600 text-white shadow-md"
-                        : "text-gray-600 hover:bg-gray-100"
+                        : "text-muted-foreground hover:bg-muted"
                     }`}
                   >
                     <Icon className="h-4 w-4" />
@@ -64,23 +65,23 @@ export function HeroSection() {
               <div className="grid md:grid-cols-4 gap-4">
                 <div className="md:col-span-2">
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     <Input
                       placeholder="Enter location, city, or neighborhood"
-                      className="pl-10 h-12 border-gray-200 focus:border-emerald-500 focus:ring-emerald-500"
+                      className="pl-10 h-12 border-border focus:ring-teal-500"
                     />
                   </div>
                 </div>
                 <Select>
-                  <SelectTrigger className="h-12 border-gray-200 focus:border-emerald-500 focus:ring-emerald-500">
+                  <SelectTrigger className="h-12 border-border focus:ring-teal-500 text-white bg-#111111">
                     <SelectValue placeholder="Property Type" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="house">House</SelectItem>
-                    <SelectItem value="apartment">Apartment</SelectItem>
-                    <SelectItem value="condo">Condo</SelectItem>
-                    <SelectItem value="townhouse">Townhouse</SelectItem>
-                    <SelectItem value="villa">Villa</SelectItem>
+                  <SelectContent className="text-white bg=#111111 ">
+                    <SelectItem value="house" className="text-white">House</SelectItem>
+                    <SelectItem value="apartment" className="text-white">Apartment</SelectItem>
+                    <SelectItem value="condo" className="text-white">Condo</SelectItem>
+                    <SelectItem value="townhouse" className="text-white">Townhouse</SelectItem>
+                    <SelectItem value="villa" className="text-white">Villa</SelectItem>
                   </SelectContent>
                 </Select>
                 <Button className="h-12 bg-teal-600 hover:bg-teal-700 text-white">
@@ -91,20 +92,22 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-teal-600 hover:bg-teal-700 text-white"
-              >
-                Explore Properties
-              </Button>
-              <Button size="lg" variant="outline" className="border-emerald-500 bg-slate-100 text-emerald-600 hover:bg-slate-100 hover:text-emerald-600">
+              <Link href="/properties">
+                <Button
+                  size="lg"
+                  className="bg-teal-600 hover:bg-teal-700 text-white"
+                >
+                  Explore Properties
+                </Button>
+              </Link>
+              <Button size="lg" variant="outline" className="border-teal-600 bg=#111111  text-white hover:bg-#111111 hover:text-teal-500">
                 How It Works
               </Button>
             </div>
           </div>
 
           <div className="hidden lg:block">
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden duration-500">
+            <div className="bg-card rounded-2xl shadow-2xl overflow-hidden duration-500">
               <div className="relative h-64">
                 <Image
                   src="/property.jpg"
@@ -116,15 +119,15 @@ export function HeroSection() {
                   <span className="bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">Featured</span>
                 </div>
                 <div className="absolute top-4 right-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-emerald-600 px-3 py-1 rounded-full text-sm font-bold">
+                  <span className="bg-card/90 backdrop-blur-sm text-teal-600 px-3 py-1 rounded-full text-sm font-bold">
                     2.5Cr
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sia Villa Estate</h3>
-                <p className="text-gray-600 mb-4">Chittaranjan Park, New Delhi</p>
-                <div className="flex justify-between text-sm text-gray-500">
+                <h3 className="text-xl font-bold text-foreground mb-2">Sia Villa Estate</h3>
+                <p className="text-muted-foreground mb-4">Chittaranjan Park, New Delhi</p>
+                <div className="flex justify-between text-sm text-muted-foreground">
                   <span>4 Beds</span>
                   <span>3 Baths</span>
                   <span>3,200 sq ft</span>

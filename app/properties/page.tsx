@@ -123,29 +123,31 @@ export default function PropertiesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#111111]">
       <Header />
       
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-2 sm:px-4 lg:px-8 max-w-7xl">
+          {/* Page Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-slate-900 mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
               Discover Premium Properties
             </h1>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Explore our curated collection of residential and commercial properties with guaranteed returns
             </p>
           </div>
 
+          {/* Filter Buttons */}
           <div className="flex justify-center mb-8">
-            <div className="bg-white rounded-lg p-1 shadow-md">
+            <div className="bg-card rounded-lg p-1 shadow-md">
               <Button
                 variant={filter === "all" ? "default" : "ghost"}
                 onClick={() => {
                   setFilter("all")
                   setCurrentPage(1)
                 }}
-                className={filter === "all" ? "bg-teal-600 text-white hover:bg-teal-700 mr-2" : ""}
+                className={filter === "all" ? "bg-gradient-to-r from-teal-500 to-teal-600 text-white" : ""}
               >
                 All Properties
               </Button>
@@ -155,7 +157,7 @@ export default function PropertiesPage() {
                   setFilter("residential")
                   setCurrentPage(1)
                 }}
-                className={filter === "residential" ? "bg-teal-600 hover:bg-teal-700 mr-2 text-white" : ""}
+                className={filter === "residential" ? "bg-gradient-to-r from-teal-500 to-teal-600 text-white" : ""}
               >
                 Residential
               </Button>
@@ -165,16 +167,17 @@ export default function PropertiesPage() {
                   setFilter("commercial")
                   setCurrentPage(1)
                 }}
-                className={filter === "commercial" ? "bg-teal-600 hover:bg-teal-700 text-white" : ""}
+                className={filter === "commercial" ? "bg-gradient-to-r from-teal-500 to-teal-600 text-white" : ""}
               >
                 Commercial
               </Button>
             </div>
           </div>
 
+          {/* Properties Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12">
             {currentProperties.map((property) => (
-              <Card key={property.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <Card key={property.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-card border-border">
                 <div className="relative h-48">
                   <Image
                     src={property.image}
@@ -185,8 +188,8 @@ export default function PropertiesPage() {
                   <Badge 
                     className={`absolute top-4 right-4 ${
                       property.type === 'commercial' 
-                        ? 'bg-white text-emerald-600 border-2 border-emerald-600 hover:bg-emerald-50' 
-                        : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                        ? 'bg-card text-teal-600 border-2 border-teal-600 hover:bg-teal-50' 
+                        : 'bg-teal-600 hover:bg-teal-700 text-white'
                     }`}
                   >
                     {property.type === 'commercial' ? 'Commercial' : 'Residential'}
@@ -194,51 +197,51 @@ export default function PropertiesPage() {
                 </div>
                 
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{property.name}</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{property.name}</h3>
                   
-                  <div className="flex items-center text-slate-600 mb-3">
+                  <div className="flex items-center text-muted-foreground mb-3">
                     <MapPin className="h-4 w-4 mr-1" />
                     <span className="text-sm">{property.location}</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="flex items-center">
-                      <TrendingUp className="h-4 w-4 text-emerald-600 mr-2" />
+                      <TrendingUp className="h-4 w-4 text-teal-600 mr-2" />
                       <div>
-                        <p className="text-xs text-slate-500">Projected Returns</p>
-                        <p className="font-semibold text-emerald-600">{property.projectedReturns}</p>
+                        <p className="text-xs text-muted-foreground">Projected Returns</p>
+                        <p className="font-semibold text-teal-600">{property.projectedReturns}</p>
                       </div>
                     </div>
                     
                     <div className="flex items-center">
-                      <IndianRupee className="h-4 w-4 text-slate-600 mr-2" />
+                      <IndianRupee className="h-4 w-4 text-muted-foreground mr-2" />
                       <div>
-                        <p className="text-xs text-slate-500">Min. Investment</p>
-                        <p className="font-semibold text-slate-900">{property.minInvestment}</p>
+                        <p className="text-xs text-muted-foreground">Min. Investment</p>
+                        <p className="font-semibold text-foreground">{property.minInvestment}</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mb-4">
-                    <p className="text-sm text-slate-500 mb-1">Property Type</p>
-                    <p className="font-medium text-slate-900">{property.propertyType}</p>
+                    <p className="text-sm text-muted-foreground mb-1">Property Type</p>
+                    <p className="font-medium text-foreground">{property.propertyType}</p>
                   </div>
 
                   <div className="mb-4">
-                    <p className="text-sm text-slate-500 mb-1">Rate</p>
-                    <p className="font-medium text-slate-900">{property.rate}</p>
+                    <p className="text-sm text-muted-foreground mb-1">Rate</p>
+                    <p className="font-medium text-foreground">{property.rate}</p>
                   </div>
 
                   <div className="mb-4">
-                    <p className="text-sm text-slate-500 mb-1">Plot Sizes Available</p>
+                    <p className="text-sm text-muted-foreground mb-1">Plot Sizes Available</p>
                     <div className="flex flex-wrap gap-1">
                       {property.plotSizes.slice(0, 2).map((size, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
+                        <Badge key={index} variant="outline" className="text-xs border-border text-muted-foreground">
                           {size}
                         </Badge>
                       ))}
                       {property.plotSizes.length > 2 && (
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="outline" className="text-xs border-border text-muted-foreground">
                           +{property.plotSizes.length - 2} more
                         </Badge>
                       )}
@@ -246,7 +249,7 @@ export default function PropertiesPage() {
                   </div>
 
                   <Link href={`/properties/${property.id}`}>
-                    <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">
+                    <Button className="w-full bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white">
                       View Details
                     </Button>
                   </Link>
@@ -255,13 +258,14 @@ export default function PropertiesPage() {
             ))}
           </div>
 
+          {/* Pagination */}
           {totalPages > 1 && (
             <div className="flex justify-center items-center gap-2">
               <Button
                 variant="outline"
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 border-border text-foreground hover:bg-muted"
               >
                 <ChevronLeft className="h-4 w-4" />
                 Previous
@@ -275,8 +279,8 @@ export default function PropertiesPage() {
                     onClick={() => handlePageChange(page)}
                     className={`w-10 h-10 ${
                       currentPage === page 
-                        ? "bg-teal-600 text-white" 
-                        : ""
+                        ? "bg-gradient-to-r from-teal-500 to-teal-600 text-white" 
+                        : "border-border text-foreground hover:bg-muted"
                     }`}
                   >
                     {page}
@@ -288,7 +292,7 @@ export default function PropertiesPage() {
                 variant="outline"
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 border-border text-foreground hover:bg-muted"
               >
                 Next
                 <ChevronRight className="h-4 w-4" />

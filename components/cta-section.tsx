@@ -46,7 +46,7 @@ export function CTASection() {
   }
 
   return (
-    <section className="py-20 bg-emerald-700 relative overflow-hidden">
+    <section className="py-20 bg-teal-700 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-white space-y-8">
@@ -54,7 +54,7 @@ export function CTASection() {
               <h2 className="text-4xl md:text-5xl font-bold leading-tight">
                 Ready to Start Growing Your Property Portfolio?
               </h2>
-              <p className="text-xl text-emerald-100 leading-relaxed">
+              <p className="text-xl text-teal-100 leading-relaxed">
                 Join thousands of investors who have already discovered the power of strategic property investments with
                 PropList.
               </p>
@@ -63,19 +63,19 @@ export function CTASection() {
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-4">
-                  <span className="text-emerald-100 font-medium">{benefit.text}</span>
+                  <span className="text-teal-100 font-medium">{benefit.text}</span>
                 </div>
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-6 pt-8 border-t border-emerald-500/30">
+            <div className="grid grid-cols-2 gap-6 pt-8 border-t border-teal-500/30">
               <div>
                 <div className="text-3xl font-bold text-white mb-1">50,000+</div>
-                <div className="text-emerald-200 text-sm">Happy Investors</div>
+                <div className="text-teal-200 text-sm">Happy Investors</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-white mb-1">$2.5B+</div>
-                <div className="text-emerald-200 text-sm">Properties Sold</div>
+                <div className="text-teal-200 text-sm">Properties Sold</div>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ export function CTASection() {
                     placeholder="John"
                     value={formData.firstName}
                     onChange={(e) => handleInputChange("firstName", e.target.value)}
-                    className="border-gray-200 focus:border-emerald-500 focus:ring-emerald-500"
+                    className="border-gray-200 focus:border-teal-500 focus:ring-teal-500"
                   />
                 </div>
                 <div>
@@ -103,7 +103,7 @@ export function CTASection() {
                     placeholder="Doe"
                     value={formData.lastName}
                     onChange={(e) => handleInputChange("lastName", e.target.value)}
-                    className="border-gray-200 focus:border-emerald-500 focus:ring-emerald-500"
+                    className="border-gray-200 focus:border-teal-500 focus:ring-teal-500"
                   />
                 </div>
               </div>
@@ -114,7 +114,7 @@ export function CTASection() {
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                  className="border-gray-200 focus:border-emerald-500 focus:ring-emerald-500"
+                  className="border-gray-200 focus:border-teal-500 focus:ring-teal-500"
                 />
               </div>
               <div>
@@ -124,14 +124,14 @@ export function CTASection() {
                   placeholder="+1 (555) 123-4567"
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
-                  className="border-gray-200 focus:border-emerald-500 focus:ring-emerald-500"
+                  className="border-gray-200 focus:border-teal-500 focus:ring-teal-500"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Investment Budget</label>
                 <Select onValueChange={(value) => handleInputChange("budget", value)}>
-                  <SelectTrigger className="border-gray-200 focus:border-emerald-500 focus:ring-emerald-500">
+                  <SelectTrigger className="border-gray-200 focus:border-teal-500 focus:ring-teal-500">
                     <SelectValue placeholder="Select your budget range" />
                   </SelectTrigger>
                   <SelectContent>
@@ -145,7 +145,7 @@ export function CTASection() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Property Type Interest</label>
                 <Select onValueChange={(value) => handleInputChange("propertyType", value)}>
-                  <SelectTrigger className="border-gray-200 focus:border-emerald-500 focus:ring-emerald-500">
+                  <SelectTrigger className="border-gray-200 focus:border-teal-500 focus:ring-teal-500">
                     <SelectValue placeholder="Select property type" />
                   </SelectTrigger>
                   <SelectContent>

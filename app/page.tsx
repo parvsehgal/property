@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -122,29 +121,6 @@ export default function Home() {
         <ContactSection />
       </main>
 
-=======
-"use client"
-
-import { Header } from "@/components/header"
-import { HeroSection } from "@/components/hero-section"
-import { FeaturedProperties } from "@/components/featured-properties"
-import { WhyChooseUs } from "@/components/why-choose-us"
-import { PropertyStats } from "@/components/property-stats"
-import { TestimonialsSection } from "@/components/testimonials-section"
-import { Footer } from "@/components/footer"
-import { ContactUs } from "@/components/ContactUs"
-
-export default function Home() {
-  return (
-    <main className="min-h-screen">
-      <Header />
-      <HeroSection />
-      <PropertyStats />
-      <FeaturedProperties />
-      <WhyChooseUs />
-      <TestimonialsSection />
-      <ContactUs />
->>>>>>> bf99cb78d527175c407e870ed4abab1627a3a5a6
       <Footer />
     </div>
   )

@@ -2,9 +2,8 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Calendar, User, Clock, ArrowRight, BookOpen } from "lucide-react"
+import { Calendar, User, Clock, ArrowRight, BookOpen, ArrowDown } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
@@ -126,26 +125,22 @@ export default function BlogsPage() {
       
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full mb-6">
-              <BookOpen className="h-10 w-10 text-white" />
-            </div>
-            <h1 className="text-5xl font-bold text-foreground mb-6">
-              Real Estate Insights
+          <div className="mb-16 mt-12">
+            <h1 className="text-4xl font-extrabold text-foreground mb-2">
+              Real Estate {" "}
+              <span className="bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent">Insights</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-3xl text-muted-foreground max-w-7xl mb-6 ml-auto">
               Stay updated with the latest news, tips, and insights from the real estate world. 
               Expert advice to help you make informed property decisions.
             </p>
+          <div className="border-b border-spacing-10 -mb-10 border-b-slate-400 " />
           </div>
 
-          {/* Blog Listings */}
           <div className="space-y-8">
             {blogs.slice(0, visibleCount).map((blog) => (
               <div key={blog.id} className="bg-card/90 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-border">
                 <div className="flex flex-col md:flex-row">
-                  {/* Image */}
                   <div className="relative w-full md:w-80 h-48 md:h-auto flex-shrink-0">
                     <Image
                       src={blog.image}
@@ -155,15 +150,14 @@ export default function BlogsPage() {
                     />
                   </div>
                   
-                  {/* Content */}
                   <div className="flex-1 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-gradient-to-b from-emerald-700 to-emerald-950 text-white px-3 py-1 rounded-full text-sm font-medium">
                         {blog.category}
                       </span>
                     </div>
                     
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 group-hover:text-teal-400 transition-colors leading-tight">
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 group-hover:text-teal-700 transition-colors leading-tight">
                       {blog.title}
                     </h2>
                     
@@ -186,7 +180,7 @@ export default function BlogsPage() {
                       </div>
                     </div>
 
-                    <Button className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white group">
+                    <Button className="bg-gradient-to-t from-emerald-700 to-emerald-900 text-foreground font-bold text-sm group">
                       Read Full Article
                       <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -196,28 +190,27 @@ export default function BlogsPage() {
             ))}
           </div>
 
-          {/* Load More Button */}
           {visibleCount < blogs.length && (
-            <div className="text-center mt-12">
+            <div className="text-center mt-12 rounded-2xl">
               <Button 
                 variant="outline" 
                 size="lg"
                 onClick={loadMore}
-                className="border-teal-500 text-teal-400 hover:bg-teal-900/30 px-8 py-3"
+                className="border-teal-500 text-teal-600 hover:bg-teal-900/30 text-lg px-8 py-1 font-extrabold"
               >
                 Load More Articles
+                <ArrowDown className="h-4 w-4 ml-2" />
               </Button>
             </div>
           )}
 
-          {/* Newsletter Subscription */}
           <div className="mt-20">
-            <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl shadow-xl p-12 text-center">
+            <div className="bg-gradient-to-b from-emerald-800 to-emerald-950 text-white rounded-xl shadow-xl p-12 text-center">
               <h3 className="text-3xl font-bold mb-4">Stay Updated</h3>
-              <p className="text-xl mb-8 opacity-90">
+              <p className="text-2xl mb-8 opacity-90">
                 Subscribe to our newsletter for the latest real estate insights and market updates
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <div className="flex flex-col items-center sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"

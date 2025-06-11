@@ -1,135 +1,124 @@
-"use client"
+"use client";
 
-import { Shield, TrendingUp, Users } from "lucide-react"
-import CountUp from 'react-countup';
+import { HoverEffect } from "./ui/card-hover-effect";
+import { StickyScroll } from "./ui/sticky-scroll-reveal";
 
 export function WhyChooseUs() {
   const features = [
     {
-      icon: Shield,
       title: "Secure Investments",
-      description: "All properties are thoroughly vetted and verified for maximum security and peace of mind.",
+      description:
+        "All properties are thoroughly vetted and verified for maximum security and peace of mind.",
     },
     {
-      icon: TrendingUp,
       title: "High Returns",
-      description: "Access exclusive high-yield properties with average returns of 12-18% annually.",
+      description:
+        "Access exclusive high-yield properties with average returns of 12-18% annually.",
     },
     {
-      icon: Users,
       title: "Expert Guidance",
-      description: "Our team of property experts provides personalized investment advice and market insights.",
+      description:
+        "Our team of property experts provides personalized investment advice and market insights.",
     },
-  ]
+    {
+      title: "Flexible Investment Options",
+      description:
+        "Choose from a variety of investment plans tailored to your financial goals and risk appetite.",
+    },
+    {
+      title: "Transparent Reporting",
+      description:
+        "Receive regular, detailed performance reports and real-time updates on your investments.",
+    },
+    {
+      title: "Hassle-Free Management",
+      description:
+        "We handle all property management tasks, from tenant screening to maintenance, ensuring a seamless experience.",
+    },
+  ];
+
+  const content = [
+    {
+      title: "Collaborative Editing",
+      description:
+        "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+      content: (
+        <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+          Collaborative Editing
+        </div>
+      ),
+    },
+    {
+      title: "Real time changes",
+      description:
+        "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+      content: (
+        <div className="flex h-full w-full items-center justify-center text-white">
+          <img
+            src="/linear.webp"
+            width={300}
+            height={300}
+            className="h-full w-full object-cover"
+            alt="linear board demo"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Version control",
+      description:
+        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      content: (
+        <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+          Version control
+        </div>
+      ),
+    },
+    {
+      title: "Running out of content",
+      description:
+        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      content: (
+        <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+          Running out of content
+        </div>
+      ),
+    },
+  ];
 
   return (
-    <section className="py-20 bg-[#111111]">
+    <section className="py-16 bg-[#111111]">
       <div className="container mx-auto px-4 lg:px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-foreground mb-4">
-            Why Choose{" "}
+        <div className="text-right mb-16">
+          <h2 className="text-4xl font-extrabold text-foreground mb-4">
+            Trust{"  "}
             <span className="bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent">
-              PropList
+              and{"  "}
             </span>
+            Credibility
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our platform offers unmatched advantages for sophisticated property investors and homebuyers
+          <p className="text-7xl text-muted-foreground max-w-7xl mb-6 ml-auto">
+            Why to trust{" "}
+            <span className="bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent">
+              Us?
+            </span>
           </p>
+          <div className="border-b border-spacing-10 -mb-10 border-b-slate-400 mt-10" />
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-12 mb-16">
-          {/* Video Section - Primary Focus */}
-          <div className="lg:col-span-2 flex flex-col justify-center">
-            <div className="bg-card rounded-2xl p-8 shadow-xl border border-border">
-              <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-lg">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/NpEaa2P7qZI"
-                  title="PropList Overview"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
+        <HoverEffect items={features} />
 
-          {/* Features Grid - Secondary */}
-          <div className="lg:col-span-1">
-            <div className="space-y-6">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 group border border-border"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="h-5 w-5 text-white" />
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-extrabold text-foreground mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-lg">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
+        <div className="bg-emerald-900 rounded-2xl p-8 shadow-lg border border-border">
           <div className="text-center mb-8">
-            <h3 className="text-4xl font-bold text-foreground mb-2">Our Track Record</h3>
-            <p className="text-muted-foreground">Numbers that speak for our excellence</p>
+            <h3 className="text-5xl text-center font-bold text-foreground mb-2">
+              How does PropList Works?
+            </h3>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="group">
-              <div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                <CountUp 
-                  start={0}
-                  end={50000}
-                  duration={2.5}
-                  separator=","
-                />
-              </div>
-              <div className="text-muted-foreground font-medium">Properties Sold</div>
-            </div>
-            <div className="group">
-              <div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                <CountUp
-                  start={0}
-                  end={1000}
-                  duration={2.5}
-                  separator=","
-                />
-              </div>
-              <div className="text-muted-foreground font-medium">Cities Covered</div>
-            </div>
-            <div className="group">
-              <div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                <CountUp 
-                  start={0}
-                  end={15}
-                  duration={2.5}
-                  separator=","
-                />
-              </div>
-              <div className="text-muted-foreground font-medium">Years Experience</div>
-            </div>
-            <div className="group">
-              <div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                <CountUp 
-                  start={0}
-                  end={98}
-                  duration={2.5}
-                  separator=","
-                />
-              </div>
-              <div className="text-muted-foreground font-medium">Client Satisfaction</div>
-            </div>
+          <div className="w-full py-4 rounded-2xl">
+            <StickyScroll content={content} />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

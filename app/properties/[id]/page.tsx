@@ -12,12 +12,6 @@ import {
   TrendingUp, 
   IndianRupee, 
   ArrowLeft, 
-  Calendar,
-  Users,
-  Building,
-  Car,
-  Wifi,
-  Shield,
   Phone,
   Mail,
   CheckCircle
@@ -40,7 +34,7 @@ export default function PropertyDetailsPage() {
         <main className="pt-24 pb-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-2xl font-bold text-foreground mb-4">Property Not Found</h1>
-            <Button onClick={() => router.back()} className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white">
+            <Button onClick={() => router.back()} className="bg-gradient-to-b from-teal-500 to-teal-600 hover:from-emerald-800 hover:to-emerald-950 text-white">
               Go Back
             </Button>
           </div>
@@ -51,7 +45,7 @@ export default function PropertyDetailsPage() {
   }
 
   const [selectedImage, setSelectedImage] = useState(0)
-  const propertyImages = [property.image, property.image, property.image] // Using same image for demo
+  const propertyImages = [property.image, property.image, property.image]
 
   return (
     <div className="min-h-screen bg-[#111111]">
@@ -59,17 +53,15 @@ export default function PropertyDetailsPage() {
       
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          {/* Back Button */}
           <Button 
             variant="ghost" 
             onClick={() => router.back()}
-            className="mb-6 text-muted-foreground hover:text-foreground"
+            className="mb-6 text-muted-foreground hover:text-foreground hover:bg-gradient-to-b from-emerald-800 to-emerald-900"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Properties
           </Button>
 
-          {/* Property Header */}
           <div className="mb-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
               <div>
@@ -79,16 +71,16 @@ export default function PropertyDetailsPage() {
                   <span className="text-lg">{property.location}</span>
                 </div>
                 <div className="flex gap-3">
-                  <Badge 
+                  {/* <Badge 
                     className={`${
                       property.type === 'commercial' 
-                        ? 'bg-card text-teal-600 border-2 border-teal-600' 
-                        : 'bg-teal-600 text-white'
+                        ? 'bg-transparent text-teal-600 border-2 border-teal-600' 
+                        : 'bg-teal-600 bg-transparent text-white'
                     }`}
                   >
                     {property.type === 'commercial' ? 'Commercial' : 'Residential'}
-                  </Badge>
-                  <Badge variant="outline" className="text-teal-600 border-teal-200">
+                  </Badge> */}
+                  <Badge variant="outline" className="text-teal-600 border-teal-600">
                     {property.propertyType}
                   </Badge>
                 </div>
@@ -104,9 +96,7 @@ export default function PropertyDetailsPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Left Column - Images and Details */}
             <div className="lg:col-span-2 space-y-8">
-              {/* Image Gallery */}
               <Card className="overflow-hidden bg-card border-border">
                 <div className="relative h-96">
                   <Image
@@ -133,7 +123,6 @@ export default function PropertyDetailsPage() {
                 </CardContent>
               </Card>
 
-              {/* Property Details Tabs */}
               <Card className="bg-card border-border">
                 <CardContent className="p-6">
                   <Tabs defaultValue="overview" className="w-full">
@@ -283,10 +272,9 @@ export default function PropertyDetailsPage() {
               </Card>
             </div>
 
-            {/* Right Column - Investment Card */}
             <div className="lg:col-span-1">
-              <Card className="sticky top-24 border-teal-200 shadow-xl bg-card">
-                <CardHeader className="bg-gradient-to-r from-teal-500 to-teal-600 text-white">
+              <Card className="sticky top-24 shadow-xl rounded-t-3xl">
+                <CardHeader className="bg-gradient-to-t from-emerald-800 rounded-t-2xl to-emerald-950 text-white">
                   <CardTitle className="text-center">Investment Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6 space-y-6">
@@ -317,10 +305,10 @@ export default function PropertyDetailsPage() {
                   </div>
                   
                   <div className="space-y-3">
-                    <Button className="w-full bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white text-lg py-3">
+                    <Button className="w-full bg-gradient-to-b from-emerald-800 to-emerald-950 text-white text-lg py-3">
                       Invest Now
                     </Button>
-                    <Button variant="outline" className="w-full border-teal-500 text-teal-600 hover:bg-teal-50">
+                    <Button variant="outline" className="w-full border-teal-500 text-teal-600 hover:bg-transparent hover:text-teal-600">
                       Download Brochure
                     </Button>
                   </div>

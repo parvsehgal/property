@@ -76,7 +76,7 @@ export default function HowItWorksSection() {
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#fecc57" />
-                <stop offset="50%" stopColor="#10b981" />
+                <stop offset="50%" stopColor="#fecc57" />
                 <stop offset="100%" stopColor="#fecc57" />
               </linearGradient>
             </defs>
@@ -94,8 +94,8 @@ export default function HowItWorksSection() {
               return (
                 <div key={index} className={`flex items-center ${isEven ? "justify-start" : "justify-end"}`}>
                   <div className={`flex items-center gap-8 max-w-lg ${isEven ? "" : "flex-row-reverse"}`}>
-                    {/* Step number */}
-                    <div className="flex items-center justify-center w-16 h-16 bg-green-600 text-white font-bold text-xl rounded-full flex-shrink-0 shadow-lg border-2 border-white/20">
+                    {/* Step number - Changed from green to accent color */}
+                    <div className="flex items-center justify-center w-16 h-16 bg-accent text-background font-bold text-xl rounded-full flex-shrink-0 shadow-lg border-2 border-white/20">
                       {step.number}
                     </div>
 

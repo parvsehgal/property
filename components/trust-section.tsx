@@ -10,7 +10,7 @@ export default function TrustSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-8 border border-white/10">
+          <div className="relative overflow-hidden rounded-2xl bg-transparent border-2 border-white/30 p-8 hover:border-white/50 hover:bg-white/5 transition-all duration-300">
             <div className="absolute inset-0 opacity-20">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-accent/30 to-transparent transform rotate-45 translate-x-16 -translate-y-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-accent/20 to-transparent transform -rotate-45 -translate-x-12 translate-y-12"></div>
@@ -21,13 +21,16 @@ export default function TrustSection() {
               <p className="text-white text-lg mb-6">
                 Baytukum is regulated by the Dubai Financial Services Authority (DFSA)
               </p>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-background">
+              <Button
+                variant="outline"
+                className="border-white/50 text-white hover:bg-accent hover:text-background hover:border-accent transition-all duration-300"
+              >
                 Know More
               </Button>
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-8 border border-white/10">
+          <div className="relative overflow-hidden rounded-2xl bg-transparent border-2 border-white/30 p-8 hover:border-white/50 hover:bg-white/5 transition-all duration-300">
             <div className="absolute inset-0 opacity-20">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-accent/30 to-transparent transform rotate-45 translate-x-16 -translate-y-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-accent/20 to-transparent transform -rotate-45 -translate-x-12 translate-y-12"></div>
@@ -38,7 +41,10 @@ export default function TrustSection() {
               <p className="text-white text-lg mb-6">
                 Baytukum is licensed by the Dubai International Financial Center (DIFC)
               </p>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-background">
+              <Button
+                variant="outline"
+                className="border-white/50 text-white hover:bg-accent hover:text-background hover:border-accent transition-all duration-300"
+              >
                 Know More
               </Button>
             </div>

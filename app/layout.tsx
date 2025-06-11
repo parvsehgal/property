@@ -1,28 +1,14 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Plus_Jakarta_Sans } from "next/font/google"
-import "./globals.css"
+import "@/app/globals.css"
+import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-})
+const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "PropList - Find Your Dream Property Today",
-  description:
-    "Discover premium properties with exclusive access to high-yield investment opportunities. Buy, sell, or rent properties with PropList.",
-  keywords: "real estate, property, buy house, sell house, rent property, investment, luxury homes",
-  authors: [{ name: "PropList Team" }],
-  openGraph: {
-    title: "PropList - Find Your Dream Property Today",
-    description: "Discover premium properties with exclusive access to high-yield investment opportunities.",
-    type: "website",
-    locale: "en_US",
-  },
+export const metadata = {
+  title: "Baytukum - Invest in Dubai Real Estate",
+  description: "Your Path to Passive Income and Capital Appreciation",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -31,9 +17,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={jakarta.variable}>
-      <body className="font-[var(--font-jakarta)] antialiased bg-white text-black dark:bg-zinc-950 dark:text-white">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>

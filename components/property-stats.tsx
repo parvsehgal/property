@@ -26,13 +26,13 @@ export function PropertyStats() {
   ]
 
   return (
-    <section className="py-16 bg-gradient-to-r from-emerald-50 to-teal-50">
+    <section className="py-10 bg-emerald-900">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group">
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-gray-900">
+                <h3 className="text-3xl font-extrabold text-foreground">
                   <CountUp 
                     start={0}
                     end={parseFloat(stat.value.replace(/,/g, ''))}
@@ -41,8 +41,8 @@ export function PropertyStats() {
                     decimals={stat.value.includes('.') ? stat.value.split('.')[1].length : 0}
                   />
                 </h3>
-                <p className="text-lg font-semibold text-gray-700">{stat.label}</p>
-                <p className="text-sm text-gray-500">{stat.description}</p>
+                <p className="text-lg font-bold text-foreground">{stat.label}</p>
+                <p className="text-sm font-semibold text-muted-foreground">{stat.description}</p>
               </div>
             </div>
           ))}

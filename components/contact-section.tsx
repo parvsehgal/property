@@ -1,99 +1,164 @@
-"use client"
-
-import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
-export function ContactSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const formRef = useRef<HTMLFormElement>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current || !formRef.current) return
-
-      const { top } = sectionRef.current.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-
-      if (top < windowHeight * 0.75) {
-        formRef.current.style.opacity = "1"
-        formRef.current.style.transform = "translateY(0)"
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
+export default function ContactSection() {
   return (
-    <section id="contact" ref={sectionRef} className="py-20 px-4 md:px-6 bg-dark-500">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-light text-light-100 mb-6">Contact Us</h2>
-          <p className="text-light-300">
-            Interested in experiencing one of our architectural masterpieces? Contact our team to schedule a private
-            viewing or to learn more about our available residences.
-          </p>
+    <section className="py-16 bg-background border-t border-white/20">
+      <div className="container max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h2>
+          <p className="text-lg text-muted-foreground mb-4">Get in touch with our investment experts</p>
+          <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
 
-        <form
-          ref={formRef}
-          className="space-y-6 opacity-0 transform translate-y-10 transition-all duration-1000 ease-out"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Information */}
+          <div className="space-y-8">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-light-200 mb-1">
-                Name
-              </label>
-              <Input
-                id="name"
-                placeholder="Your name"
-                className="rounded-none bg-dark-400 border-dark-300 focus:border-accent1 focus:ring-accent1 text-light-100"
-              />
+              <h3 className="text-2xl font-semibold text-white mb-6">Get in Touch</h3>
+              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                Ready to start your real estate investment journey? Our team of experts is here to guide you through
+                every step of the process. Contact us today for a free consultation.
+              </p>
             </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-light-200 mb-1">
-                Email
-              </label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="Your email"
-                className="rounded-none bg-dark-400 border-dark-300 focus:border-accent1 focus:ring-accent1 text-light-100"
-              />
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Phone</h4>
+                  <p className="text-gray-300">+971 4 123 4567</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Email</h4>
+                  <p className="text-gray-300">info@baytukum.ae</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Address</h4>
+                  <p className="text-gray-300">
+                    Dubai International Financial Centre
+                    <br />
+                    Dubai, UAE
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-1">Business Hours</h4>
+                  <p className="text-gray-300">
+                    Sunday - Thursday: 9:00 AM - 6:00 PM
+                    <br />
+                    Friday - Saturday: Closed
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-light-200 mb-1">
-              Subject
-            </label>
-            <Input
-              id="subject"
-              placeholder="Subject"
-              className="rounded-none bg-dark-400 border-dark-300 focus:border-accent1 focus:ring-accent1 text-light-100"
-            />
-          </div>
+          {/* Contact Form */}
+          <div className="bg-white rounded-2xl p-8 border border-gray-200">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
 
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-light-200 mb-1">
-              Message
-            </label>
-            <Textarea
-              id="message"
-              placeholder="Your message"
-              rows={5}
-              className="rounded-none bg-dark-400 border-dark-300 focus:border-accent1 focus:ring-accent1 text-light-100"
-            />
-          </div>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                    First Name
+                  </label>
+                  <Input
+                    id="firstName"
+                    type="text"
+                    placeholder="Enter your first name"
+                    className="bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-accent focus:border-accent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                    Last Name
+                  </label>
+                  <Input
+                    id="lastName"
+                    type="text"
+                    placeholder="Enter your last name"
+                    className="bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-accent focus:border-accent"
+                  />
+                </div>
+              </div>
 
-          <Button className="bg-accent hover:bg-accent-foreground text-light-100 rounded-none px-8 py-6 w-full md:w-auto">
-            SEND MESSAGE
-          </Button>
-        </form>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-accent focus:border-accent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-accent focus:border-accent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  Subject
+                </label>
+                <Input
+                  id="subject"
+                  type="text"
+                  placeholder="What's this about?"
+                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-accent focus:border-accent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  rows={4}
+                  placeholder="Tell us more about your investment goals..."
+                  className="bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-accent focus:border-accent"
+                />
+              </div>
+
+              <Button className="w-full bg-accent text-background hover:bg-accent/90 font-semibold py-3">
+                Send Message
+              </Button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   )

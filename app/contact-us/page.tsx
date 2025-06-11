@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Send, 
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
   Building2,
   MessageSquare,
   Users,
   HeadphonesIcon,
-  CheckCircle
-} from "lucide-react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+  CheckCircle,
+} from "lucide-react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -27,104 +27,129 @@ export default function ContactPage() {
     email: "",
     phone: "",
     subject: "",
-    message: ""
-  })
+    message: "",
+  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
+    e.preventDefault();
+    console.log("Form submitted:", formData);
     setFormData({
       name: "",
       email: "",
       phone: "",
       subject: "",
-      message: ""
-    })
-    alert("Thank you for your message! We'll get back to you soon.")
-  }
+      message: "",
+    });
+    alert("Thank you for your message! We'll get back to you soon.");
+  };
 
   const contactInfo = [
     {
       icon: Phone,
       title: "Phone",
       description: "Call us directly",
-      details: ["+91 98765 43210", "+91 87654 32109"]
+      details: ["+91 98765 43210", "+91 87654 32109"],
     },
     {
       icon: Mail,
       title: "Email",
       description: "Send us an email",
-      details: ["info@proplist.com", "sales@proplist.com"]
+      details: ["info@proplist.com", "sales@proplist.com"],
     },
     {
       icon: MapPin,
       title: "Office",
       description: "Visit our office",
-      details: ["123 Business District", "Moti Nagar, New Delhi", "Delhi 110019"]
+      details: [
+        "123 Business District",
+        "Moti Nagar, New Delhi",
+        "Delhi 110019",
+      ],
     },
     {
       icon: Clock,
       title: "Business Hours",
       description: "We're available",
-      details: ["Mon-Fri: 9:00 AM - 7:00 PM", "Saturday: 10:00 AM - 6:00 PM", "Sunday: 11:00 AM - 4:00 PM"]
-    }
-  ]
+      details: [
+        "Mon-Fri: 9:00 AM - 7:00 PM",
+        "Saturday: 10:00 AM - 6:00 PM",
+        "Sunday: 11:00 AM - 4:00 PM",
+      ],
+    },
+  ];
 
   const services = [
     {
       icon: Building2,
       title: "Property Investment",
-      description: "Get expert guidance on property investments with guaranteed returns and comprehensive market insights."
+      description:
+        "Get expert guidance on property investments with guaranteed returns and comprehensive market insights.",
     },
     {
       icon: Users,
       title: "Free Consultation",
-      description: "Schedule a complimentary consultation with our real estate experts to discuss your investment goals."
+      description:
+        "Schedule a complimentary consultation with our real estate experts to discuss your investment goals.",
     },
     {
       icon: HeadphonesIcon,
       title: "24/7 Support",
-      description: "Our dedicated customer support team is available round the clock to answer all your questions."
-    }
-  ]
+      description:
+        "Our dedicated customer support team is available round the clock to answer all your questions.",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-[#111111]">
       <Header />
       <main className="pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full mb-6">
-              <MessageSquare className="h-10 w-10 text-white" />
-            </div>
-            <h1 className="text-5xl font-bold text-foreground mb-6">
-              Get In Touch
+          <div className="mb-12 mt-10">
+            <h1 className="text-3xl font-extrabold text-foreground mb-2">
+              Get In{" "}
+              <span className="bg-gradient-to-r from-teal-600 to-teal-600 bg-clip-text text-transparent">
+                Touch
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Have questions about our properties or investment opportunities? We're here to help you make informed decisions and guide you through your real estate journey.
+            <p className="text-4xl text-muted-foreground max-w-7xl leading-relaxed">
+              Have questions about our properties or investment opportunities?
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-card/80 backdrop-blur-sm hover:-translate-y-1">
+              <Card
+                key={index}
+                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-card/80 backdrop-blur-sm hover:-translate-y-1"
+              >
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <info.icon className="h-8 w-8 text-white" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-700 to-emerald-900 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <info.icon className="h-8 w-8 text-foreground" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{info.title}</h3>
-                  <p className="text-muted-foreground mb-4">{info.description}</p>
+                  <h3 className="text-xl font-extrabold text-foreground mb-2">
+                    {info.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    {info.description}
+                  </p>
                   <div className="space-y-1">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="font-semibold text-foreground text-sm">{detail}</p>
+                      <p
+                        key={idx}
+                        className="font-semibold text-muted-foreground text-sm"
+                      >
+                        {detail}
+                      </p>
                     ))}
                   </div>
                 </CardContent>
@@ -137,12 +162,14 @@ export default function ContactPage() {
               <Card className="border-0 shadow-xl bg-card/90 backdrop-blur-sm">
                 <CardHeader className="pb-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-3 rounded-lg">
-                      <Send className="h-6 w-6 text-white" />
-                    </div>
                     <div>
-                      <CardTitle className="text-3xl font-bold text-foreground">Send us a Message</CardTitle>
-                      <p className="text-muted-foreground mt-2">Fill out the form below and we'll get back to you within 24 hours.</p>
+                      <CardTitle className="text-2xl font-bold text-foreground">
+                        Send us a Message
+                      </CardTitle>
+                      <p className="text-muted-foreground text-2xl max-w-3xl mt-2">
+                        Fill out the form below and we'll get back to you within
+                        24 hours.
+                      </p>
                     </div>
                   </div>
                 </CardHeader>
@@ -150,7 +177,12 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
-                        <Label htmlFor="name" className="text-foreground font-semibold">Full Name *</Label>
+                        <Label
+                          htmlFor="name"
+                          className="text-foreground font-semibold"
+                        >
+                          Full Name *
+                        </Label>
                         <Input
                           id="name"
                           name="name"
@@ -163,7 +195,12 @@ export default function ContactPage() {
                         />
                       </div>
                       <div className="space-y-3">
-                        <Label htmlFor="email" className="text-foreground font-semibold">Email Address *</Label>
+                        <Label
+                          htmlFor="email"
+                          className="text-foreground font-semibold"
+                        >
+                          Email Address *
+                        </Label>
                         <Input
                           id="email"
                           name="email"
@@ -179,7 +216,12 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
-                        <Label htmlFor="phone" className="text-foreground font-semibold">Phone Number</Label>
+                        <Label
+                          htmlFor="phone"
+                          className="text-foreground font-semibold"
+                        >
+                          Phone Number
+                        </Label>
                         <Input
                           id="phone"
                           name="phone"
@@ -191,7 +233,12 @@ export default function ContactPage() {
                         />
                       </div>
                       <div className="space-y-3">
-                        <Label htmlFor="subject" className="text-foreground font-semibold">Subject *</Label>
+                        <Label
+                          htmlFor="subject"
+                          className="text-foreground font-semibold"
+                        >
+                          Subject *
+                        </Label>
                         <Input
                           id="subject"
                           name="subject"
@@ -206,7 +253,12 @@ export default function ContactPage() {
                     </div>
 
                     <div className="space-y-3">
-                      <Label htmlFor="message" className="text-foreground font-semibold">Message *</Label>
+                      <Label
+                        htmlFor="message"
+                        className="text-foreground font-semibold"
+                      >
+                        Message *
+                      </Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -219,9 +271,9 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      className="w-full h-14 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    <Button
+                      type="submit"
+                      className="w-full h-14 bg-gradient-to-t from-emerald-700 to-emerald-900 text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       <Send className="h-5 w-5 mr-3" />
                       Send Message
@@ -231,7 +283,7 @@ export default function ContactPage() {
               </Card>
             </div>
 
-            <div className="lg:col-span-2 space-y-6">
+            {/* <div className="lg:col-span-2 space-y-6">
               <Card className="border-0 shadow-xl bg-card/90 backdrop-blur-sm">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-xl">
@@ -278,35 +330,33 @@ export default function ContactPage() {
                   </div>
                 </CardContent>
               </Card>
+            </div> */}
+
+            <div className="flex flex-col w-[400px] gap-8">
+              {services.map((service, index) => (
+                <Card
+                  key={index}
+                  className="group text-center border-0 shadow-xl bg-card/90 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <CardContent className="p-8">
+                    {/* <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="h-10 w-10 text-white" />
+                    </div> */}
+                    <h3 className="text-2xl font-bold text-foreground mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground text-lg leading-relaxed">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-          </div>
-
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              How Can We Help You?
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our team is ready to assist you with all your real estate needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="group text-center border-0 shadow-xl bg-card/90 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <CardContent className="p-8">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <service.icon className="h-10 w-10 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </main>
 
       <Footer />
     </div>
-  )
+  );
 }

@@ -55,8 +55,19 @@ export default function DubaiRealEstateSection() {
   ]
 
   return (
-    <section className="py-16 bg-background border-t border-white/20">
-      <div className="container max-w-6xl mx-auto">
+    <section className="py-16 bg-background border-t border-white/20 relative">
+      {/* Background Image with Opacity */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+        style={{
+          backgroundImage: "url('/main-property.jpg')",
+        }}
+      ></div>
+
+      {/* Overlay to ensure content readability */}
+      <div className="absolute inset-0 bg-background/40"></div>
+
+      <div className="container max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-4xl mx-auto">
             Why Dubai Real Estate Is Outperforming Global Markets?
@@ -68,7 +79,7 @@ export default function DubaiRealEstateSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 flex items-start gap-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+              className="bg-white/95 backdrop-blur-sm rounded-xl p-6 flex items-start gap-4 border border-gray-200 hover:shadow-lg transition-all duration-300 hover:bg-white"
             >
               <div className="flex-shrink-0 w-12 h-12 bg-background rounded-full flex items-center justify-center">
                 <feature.icon className="w-6 h-6 text-accent" />

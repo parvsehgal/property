@@ -34,7 +34,7 @@ export default function MeetVisionarySection() {
           <div className="flex justify-center">
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=400&width=400"
+                src="/human-placeholder.jpg"
                 alt="Latifa Bin Haider speaking at an event"
                 width={400}
                 height={400}

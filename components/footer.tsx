@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="MiniLands Logo"
                 width={32}
                 height={32}

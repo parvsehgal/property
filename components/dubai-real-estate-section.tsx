@@ -1,4 +1,15 @@
-import { TrendingUp, Building, Users, Globe, MapPin, DollarSign, Shield, Landmark, Star, Receipt } from "lucide-react"
+import {
+  TrendingUp,
+  Building,
+  Users,
+  Globe,
+  MapPin,
+  DollarSign,
+  Shield,
+  Landmark,
+  Star,
+  Receipt,
+} from "lucide-react";
 
 export default function DubaiRealEstateSection() {
   const features = [
@@ -10,7 +21,8 @@ export default function DubaiRealEstateSection() {
     {
       icon: Building,
       title: "Government support",
-      description: "Infrastructure development, regulatory reforms, and investor-friendly policies.",
+      description:
+        "Infrastructure development, regulatory reforms, and investor-friendly policies.",
     },
     {
       icon: Users,
@@ -52,7 +64,7 @@ export default function DubaiRealEstateSection() {
       title: "Tax-friendly policies",
       description: "Making it a favorable investment destination.",
     },
-  ]
+  ];
 
   return (
     <section className="py-16 bg-background border-t border-white/20 relative">
@@ -70,7 +82,7 @@ export default function DubaiRealEstateSection() {
       <div className="container max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-4xl mx-auto">
-            Why Dubai Real Estate Is Outperforming Global Markets?
+            Why India Real Estate Is Outperforming Global Markets?
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
@@ -85,13 +97,17 @@ export default function DubaiRealEstateSection() {
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

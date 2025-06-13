@@ -1,18 +1,16 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import StatsSection from "@/components/stats-section"
-import TrustSection from "@/components/trust-section"
-import DubaiRealEstateSection from "@/components/dubai-real-estate-section"
-import WhyBaytukumSection from "@/components/why-baytukum-section"
-import HowItWorksSection from "@/components/how-it-works-section"
-import FeaturedProjectsSection from "@/components/featured-projects-section"
-import InvestorsResourcesSection from "@/components/investors-resources-section"
-import TestimonialsSection from "@/components/testimonials-section"
-import MeetVisionarySection from "@/components/meet-visionary-section"
-import MediaCoverageSection from "@/components/media-coverage-section"
-import ContactSection from "@/components/contact-section"
-import Footer from "@/components/footer"
+import Image from "next/image";
+import Link from "next/link";
+import TrustSection from "@/components/trust-section";
+import DubaiRealEstateSection from "@/components/dubai-real-estate-section";
+import WhyBaytukumSection from "@/components/why-baytukum-section";
+import HowItWorksSection from "@/components/how-it-works-section";
+import FeaturedProjectsSection from "@/components/featured-projects-section";
+import InvestorsResourcesSection from "@/components/investors-resources-section";
+import TestimonialsSection from "@/components/testimonials-section";
+import MeetVisionarySection from "@/components/meet-visionary-section";
+import MediaCoverageSection from "@/components/media-coverage-section";
+import ContactSection from "@/components/contact-section";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -22,25 +20,17 @@ export default function Home() {
           <div className="flex items-center gap-2 mr-4">
             <Image
               src="/logo.svg"
-              alt="Baytukum Logo"
+              alt="MiniLands Logo"
               width={40}
               height={40}
               className="h-10 w-auto"
             />
-            <span className="text-accent font-semibold text-xl">
-              Baytukum
-            </span>
+            <span className="text-accent font-semibold text-xl">MiniLands</span>
           </div>
 
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1 justify-center">
             <Link href="/" className="text-foreground border-b-2 border-accent">
               Home
-            </Link>
-            <Link
-              href="/#"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Properties
             </Link>
             <Link
               href="/#"
@@ -52,16 +42,33 @@ export default function Home() {
               href="/#"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              Services
+              Properties
             </Link>
             <Link
               href="/#"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              More
+              Expert Panel
+            </Link>
+            <Link
+              href="/#"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Blogs
+            </Link>
+            <Link
+              href="/#"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              FAQ's
+            </Link>
+            <Link
+              href="/#"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Login
             </Link>
           </nav>
-
           <div className="flex items-center gap-4 ml-auto">
             <Link
               href="/#"
@@ -82,11 +89,11 @@ export default function Home() {
             {/* Left: Text */}
             <div className="lg:w-1/2 max-w-2xl space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Invest in Dubai
+                Invest in India
                 <br />
                 Real Estate with
                 <br />
-                Baytukum
+                MiniLands
               </h1>
 
               <p className="text-xl md:text-2xl text-accent font-medium">
@@ -108,7 +115,7 @@ export default function Home() {
             <div className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center">
               <Image
                 src="/property.jpg"
-                alt="Featured Dubai property"
+                alt="Featured India property"
                 width={1000}
                 height={800}
                 className="object-cover rounded-xl shadow-xl"
@@ -117,7 +124,6 @@ export default function Home() {
           </div>
         </section>
 
-        <StatsSection />
         <TrustSection />
         <DubaiRealEstateSection />
         <WhyBaytukumSection />
@@ -126,11 +132,10 @@ export default function Home() {
         <InvestorsResourcesSection />
         <TestimonialsSection />
         <MeetVisionarySection />
-        <MediaCoverageSection />
         <ContactSection />
       </main>
 
       <Footer />
     </div>
-  )
+  );
 }

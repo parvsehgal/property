@@ -1,15 +1,19 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function ContactSection() {
   return (
     <section className="py-16 bg-background border-t border-white/20">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h2>
-          <p className="text-lg text-muted-foreground mb-4">Get in touch with our investment experts</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Contact Us
+          </h2>
+          <p className="text-lg text-muted-foreground mb-4">
+            Get in touch with our investment experts
+          </p>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
 
@@ -17,10 +21,13 @@ export default function ContactSection() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6">
+                Get in Touch
+              </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                Ready to start your real estate investment journey? Our team of experts is here to guide you through
-                every step of the process. Contact us today for a free consultation.
+                Ready to start your real estate investment journey? Our team of
+                experts is here to guide you through every step of the process.
+                Contact us today for a free consultation.
               </p>
             </div>
 
@@ -41,7 +48,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email</h4>
-                  <p className="text-gray-300">info@baytukum.ae</p>
+                  <p className="text-gray-300">info@minilands.ae</p>
                 </div>
               </div>
 
@@ -52,9 +59,9 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-white font-semibold mb-1">Address</h4>
                   <p className="text-gray-300">
-                    Dubai International Financial Centre
+                    India International Financial Centre
                     <br />
-                    Dubai, UAE
+                    India
                   </p>
                 </div>
               </div>
@@ -64,7 +71,9 @@ export default function ContactSection() {
                   <Clock className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Business Hours</h4>
+                  <h4 className="text-white font-semibold mb-1">
+                    Business Hours
+                  </h4>
                   <p className="text-gray-300">
                     Sunday - Thursday: 9:00 AM - 6:00 PM
                     <br />
@@ -77,12 +86,17 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8 border border-gray-200">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              Send us a Message
+            </h3>
 
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     First Name
                   </label>
                   <Input
@@ -93,7 +107,10 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Last Name
                   </label>
                   <Input
@@ -106,7 +123,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Email Address
                 </label>
                 <Input
@@ -118,7 +138,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Phone Number
                 </label>
                 <Input
@@ -130,7 +153,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Subject
                 </label>
                 <Input
@@ -142,7 +168,10 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Message
                 </label>
                 <Textarea
@@ -161,5 +190,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

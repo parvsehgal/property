@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, MapPin } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 interface Property {
-  id: number
-  name: string
-  location: string
-  projectedReturns: string
-  minInvestment: string
-  type: "residential" | "commercial"
-  image: string
-  rate: string
-  plotSizes: string[]
-  amenities: string[]
-  nearbyPlaces: string[]
-  promotedBy: string
+  id: number;
+  name: string;
+  location: string;
+  projectedReturns: string;
+  minInvestment: string;
+  type: "residential" | "commercial";
+  image: string;
+  rate: string;
+  plotSizes: string[];
+  amenities: string[];
+  nearbyPlaces: string[];
+  promotedBy: string;
 }
 
 export default function FeaturedProjectsSection() {
-  const [activeTab, setActiveTab] = useState("residential")
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
+  const [activeTab, setActiveTab] = useState("residential");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const properties: Property[] = [
     {
@@ -35,9 +35,23 @@ export default function FeaturedProjectsSection() {
       type: "residential",
       image: "/property.jpg",
       rate: "₹3,451 per sq.ft",
-      plotSizes: ["20×40 (800 sq.ft)", "20×35 (700 sq.ft)", "15×50 (750 sq.ft)"],
-      amenities: ["Garden", "Cement Road", "24/7 Security", "Underground Electric"],
-      nearbyPlaces: ["New Prestige College - 2min", "Aurobindo Hospital - 8min", "Airport - 25min", "Rajwada - 40min"],
+      plotSizes: [
+        "20×40 (800 sq.ft)",
+        "20×35 (700 sq.ft)",
+        "15×50 (750 sq.ft)",
+      ],
+      amenities: [
+        "Garden",
+        "Cement Road",
+        "24/7 Security",
+        "Underground Electric",
+      ],
+      nearbyPlaces: [
+        "New Prestige College - 2min",
+        "Aurobindo Hospital - 8min",
+        "Airport - 25min",
+        "Rajwada - 40min",
+      ],
       promotedBy: "LASAR REAL ESTATE VENTURE PRIVATE LIMITED",
     },
     {
@@ -49,9 +63,24 @@ export default function FeaturedProjectsSection() {
       type: "residential",
       image: "/property.jpg",
       rate: "₹3,351 per sq.ft",
-      plotSizes: ["30×50 (1,500 sq.ft)", "20×50 (1,000 sq.ft)", "20×40 (800 sq.ft)"],
-      amenities: ["Club House", "Swimming Pool", "Temple", "Garden", "Secured Campus"],
-      nearbyPlaces: ["Aurobindo Hospital - 15min", "New Prestige College - 5min", "Airport - 35min", "Rajwada - 25min"],
+      plotSizes: [
+        "30×50 (1,500 sq.ft)",
+        "20×50 (1,000 sq.ft)",
+        "20×40 (800 sq.ft)",
+      ],
+      amenities: [
+        "Club House",
+        "Swimming Pool",
+        "Temple",
+        "Garden",
+        "Secured Campus",
+      ],
+      nearbyPlaces: [
+        "Aurobindo Hospital - 15min",
+        "New Prestige College - 5min",
+        "Airport - 35min",
+        "Rajwada - 25min",
+      ],
       promotedBy: "Lasar Real Estate Private Limited",
     },
     {
@@ -63,9 +92,24 @@ export default function FeaturedProjectsSection() {
       type: "commercial",
       image: "/property.jpg",
       rate: "₹4,300 per sq.ft",
-      plotSizes: ["30×40 (1,200 sq.ft)", "20×50 (1,000 sq.ft)", "25×50 (1,250 sq.ft)"],
-      amenities: ["Garden", "Cricket Stadium", "Basketball Court", "Security", "Vehicle Charging Point"],
-      nearbyPlaces: ["New Prestige College - 2min", "Aurobindo Hospital - 8min", "Airport - 25min", "Rajwada - 35min"],
+      plotSizes: [
+        "30×40 (1,200 sq.ft)",
+        "20×50 (1,000 sq.ft)",
+        "25×50 (1,250 sq.ft)",
+      ],
+      amenities: [
+        "Garden",
+        "Cricket Stadium",
+        "Basketball Court",
+        "Security",
+        "Vehicle Charging Point",
+      ],
+      nearbyPlaces: [
+        "New Prestige College - 2min",
+        "Aurobindo Hospital - 8min",
+        "Airport - 25min",
+        "Rajwada - 35min",
+      ],
       promotedBy: "Lasar Real Estate Private Limited",
     },
     {
@@ -77,9 +121,17 @@ export default function FeaturedProjectsSection() {
       type: "residential",
       image: "/property.jpg",
       rate: "₹3,600 per sq.ft",
-      plotSizes: ["20×50 (1,000 sq.ft)", "30×50 (1,500 sq.ft)", "60×50 (3,000 sq.ft)"],
+      plotSizes: [
+        "20×50 (1,000 sq.ft)",
+        "30×50 (1,500 sq.ft)",
+        "60×50 (3,000 sq.ft)",
+      ],
       amenities: ["Proposed Club House", "3 Side Open Plots"],
-      nearbyPlaces: ["Aurobindo Hospital - 7min", "Super Corridor - 7min", "Proposed Ahilya Path - 2min"],
+      nearbyPlaces: [
+        "Aurobindo Hospital - 7min",
+        "Super Corridor - 7min",
+        "Proposed Ahilya Path - 2min",
+      ],
       promotedBy: "Lasar Real Estate Private Limited",
     },
     {
@@ -91,49 +143,62 @@ export default function FeaturedProjectsSection() {
       type: "commercial",
       image: "/property.jpg",
       rate: "₹2,700 per sq.ft",
-      plotSizes: ["20×50 (1,000 sq.ft)", "30×50 (1,500 sq.ft)", "42×50 (2,100 sq.ft)"],
+      plotSizes: [
+        "20×50 (1,000 sq.ft)",
+        "30×50 (1,500 sq.ft)",
+        "42×50 (2,100 sq.ft)",
+      ],
       amenities: ["Garden", "Temple", "CCTV Covered Campus", "Kids Play Area"],
       nearbyPlaces: ["IIT Indore - 15min", "Chokhi Dhani - 7min"],
       promotedBy: "Lasar Real Estate Private Limited",
     },
-  ]
+  ];
 
-  const filteredProperties = properties.filter((property) => property.type === activeTab)
-  const totalSlides = Math.max(0, filteredProperties.length - 2)
+  const filteredProperties = properties.filter(
+    (property) => property.type === activeTab,
+  );
+  const totalSlides = Math.max(0, filteredProperties.length - 2);
 
   const nextSlide = () => {
-    if (isAnimating) return
-    setIsAnimating(true)
-    setCurrentSlide((prev) => (prev + 1) % (totalSlides + 1))
-    setTimeout(() => setIsAnimating(false), 500)
-  }
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentSlide((prev) => (prev + 1) % (totalSlides + 1));
+    setTimeout(() => setIsAnimating(false), 500);
+  };
 
   const prevSlide = () => {
-    if (isAnimating) return
-    setIsAnimating(true)
-    setCurrentSlide((prev) => (prev - 1 + totalSlides + 1) % (totalSlides + 1))
-    setTimeout(() => setIsAnimating(false), 500)
-  }
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentSlide((prev) => (prev - 1 + totalSlides + 1) % (totalSlides + 1));
+    setTimeout(() => setIsAnimating(false), 500);
+  };
 
   const handleTabChange = (tab: string) => {
-    if (isAnimating) return
-    setIsAnimating(true)
-    setActiveTab(tab)
-    setCurrentSlide(0)
-    setTimeout(() => setIsAnimating(false), 300)
-  }
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setActiveTab(tab);
+    setCurrentSlide(0);
+    setTimeout(() => setIsAnimating(false), 300);
+  };
 
-  const visibleProperties = filteredProperties.slice(currentSlide, currentSlide + 3)
+  const visibleProperties = filteredProperties.slice(
+    currentSlide,
+    currentSlide + 3,
+  );
 
   return (
     <section className="py-16 bg-background border-t border-white/20 overflow-hidden">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-accent font-semibold text-lg mb-2">Featured Projects</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Discover Our Featured Projects</h2>
+          <p className="text-accent font-semibold text-lg mb-2">
+            Featured Projects
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Discover Our Featured Projects
+          </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
 
-          {/* Tab Buttons - Fixed styling */}
+          {/* Tab Buttons */}
           <div className="flex justify-center gap-4 mb-8">
             <Button
               onClick={() => handleTabChange("residential")}
@@ -190,13 +255,15 @@ export default function FeaturedProjectsSection() {
           <div className="px-16 overflow-hidden">
             <div
               className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ease-in-out ${
-                isAnimating ? "transform translate-x-2 opacity-90" : "transform translate-x-0 opacity-100"
+                isAnimating
+                  ? "transform translate-x-2 opacity-90"
+                  : "transform translate-x-0 opacity-100"
               }`}
             >
               {visibleProperties.map((property, index) => (
                 <div
                   key={property.id}
-                  className={`bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-200 ${
+                  className={`bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-white/10 hover:border-accent/50 ${
                     isAnimating ? "animate-pulse" : ""
                   }`}
                   style={{
@@ -211,25 +278,33 @@ export default function FeaturedProjectsSection() {
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
                     {/* Property Type Badge */}
                     <div className="absolute top-3 left-3">
                       <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium text-white ${
-                          property.type === "residential" ? "bg-green-600" : "bg-blue-600"
+                        className={`px-3 py-1 rounded-full text-xs font-medium text-white backdrop-blur-sm ${
+                          property.type === "residential"
+                            ? "bg-green-600/80"
+                            : "bg-blue-600/80"
                         }`}
                       >
-                        {property.type === "residential" ? "Residential" : "Commercial"}
+                        {property.type === "residential"
+                          ? "Residential"
+                          : "Commercial"}
                       </span>
                     </div>
+
                     {/* Returns Badge */}
                     <div className="absolute top-3 right-3">
-                      <span className="bg-accent text-background px-2 py-1 rounded text-xs font-bold">
+                      <span className="bg-accent/90 text-background px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm">
                         {property.projectedReturns}
                       </span>
                     </div>
+
                     {/* Investment Amount */}
                     <div className="absolute bottom-3 left-3">
-                      <span className="bg-black/70 text-white px-3 py-1 rounded text-sm font-semibold backdrop-blur-sm">
+                      <span className="bg-black/70 text-white px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm">
                         {property.minInvestment}
                       </span>
                     </div>
@@ -237,50 +312,67 @@ export default function FeaturedProjectsSection() {
 
                   {/* Property Details */}
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2 hover:text-accent transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-2 hover:text-accent transition-colors duration-300">
                       {property.name}
                     </h3>
 
                     <div className="flex items-center gap-2 mb-4">
-                      <MapPin className="w-4 h-4 text-gray-500" />
-                      <span className="text-gray-600 text-sm">{property.location}</span>
+                      <MapPin className="w-4 h-4 text-accent" />
+                      <span className="text-white/70 text-sm">
+                        {property.location}
+                      </span>
                     </div>
 
                     {/* Metrics */}
                     <div className="space-y-3 mb-6">
-                      <div className="flex justify-between items-center hover:bg-gray-50 p-2 rounded transition-colors duration-200">
-                        <span className="text-gray-600 text-sm">Projected Returns</span>
-                        <span className="text-gray-900 font-semibold">{property.projectedReturns}</span>
+                      <div className="flex justify-between items-center hover:bg-white/5 p-2 rounded transition-colors duration-200">
+                        <span className="text-white/70 text-sm">
+                          Projected Returns
+                        </span>
+                        <span className="text-accent font-semibold">
+                          {property.projectedReturns}
+                        </span>
                       </div>
-                      <div className="flex justify-between items-center hover:bg-gray-50 p-2 rounded transition-colors duration-200">
-                        <span className="text-gray-600 text-sm">Min. Investment</span>
-                        <span className="text-gray-900 font-semibold">{property.minInvestment}</span>
+                      <div className="flex justify-between items-center hover:bg-white/5 p-2 rounded transition-colors duration-200">
+                        <span className="text-white/70 text-sm">
+                          Min. Investment
+                        </span>
+                        <span className="text-white font-semibold">
+                          {property.minInvestment}
+                        </span>
                       </div>
-                      <div className="flex justify-between items-center hover:bg-gray-50 p-2 rounded transition-colors duration-200">
-                        <span className="text-gray-600 text-sm">Rate</span>
-                        <span className="text-gray-900 font-semibold">{property.rate}</span>
+                      <div className="flex justify-between items-center hover:bg-white/5 p-2 rounded transition-colors duration-200">
+                        <span className="text-white/70 text-sm">Rate</span>
+                        <span className="text-white font-semibold">
+                          {property.rate}
+                        </span>
                       </div>
                     </div>
 
                     {/* Plot Sizes */}
                     <div className="mb-6">
-                      <h4 className="text-sm font-medium text-gray-700 mb-2">Plot Sizes Available</h4>
+                      <h4 className="text-sm font-medium text-white/80 mb-2">
+                        Plot Sizes Available
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {property.plotSizes.slice(0, 2).map((size, idx) => (
-                          <span key={idx} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                          <span
+                            key={idx}
+                            className="bg-white/10 text-white/80 px-2 py-1 rounded text-xs border border-white/10"
+                          >
                             {size}
                           </span>
                         ))}
                         {property.plotSizes.length > 2 && (
-                          <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                          <span className="bg-accent/20 text-accent px-2 py-1 rounded text-xs border border-accent/30">
                             +{property.plotSizes.length - 2} more
                           </span>
                         )}
                       </div>
                     </div>
 
-                    {/* View Details Button - Fixed styling */}
-                    <Button className="w-full bg-accent text-background hover:bg-accent/90 font-semibold transition-all duration-300 transform hover:scale-105">
+                    {/* View Details Button */}
+                    <Button className="w-full bg-accent text-background hover:bg-accent/90 font-semibold transition-all duration-300 transform hover:scale-105 border-0">
                       View Details
                     </Button>
                   </div>
@@ -292,11 +384,13 @@ export default function FeaturedProjectsSection() {
           {/* Show message if no properties */}
           {filteredProperties.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">No {activeTab} properties available at the moment.</p>
+              <p className="text-white/60 text-lg">
+                No {activeTab} properties available at the moment.
+              </p>
             </div>
           )}
         </div>
       </div>
     </section>
-  )
+  );
 }

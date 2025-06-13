@@ -1,11 +1,13 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export default function TrustSection() {
   return (
     <section className="py-16 bg-background border-t border-white/20">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Trust and Credibility</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Trust and Credibility
+          </h2>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
 
@@ -19,7 +21,8 @@ export default function TrustSection() {
             <div className="relative z-10 text-center">
               <h3 className="text-3xl font-bold text-accent mb-4">DFSA</h3>
               <p className="text-white text-lg mb-6">
-                Baytukum is regulated by the Dubai Financial Services Authority (DFSA)
+                MiniLands is regulated by the India Financial Services Authority
+                (DFSA)
               </p>
               <Button
                 variant="outline"
@@ -39,7 +42,8 @@ export default function TrustSection() {
             <div className="relative z-10 text-center">
               <h3 className="text-3xl font-bold text-accent mb-4">DIFC</h3>
               <p className="text-white text-lg mb-6">
-                Baytukum is licensed by the Dubai International Financial Center (DIFC)
+                MiniLands is licensed by the India International Financial
+                Center (DIFC)
               </p>
               <Button
                 variant="outline"
@@ -52,5 +56,5 @@ export default function TrustSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

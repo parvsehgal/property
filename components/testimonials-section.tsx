@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 
 export default function TestimonialsSection() {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const testimonials = [
     {
@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
       name: "Bushra Bawazeer",
       role: "Professional Investor",
       image: "/human-placeholder.jpg",
-      text: "Trust in Baytukum and invest is the simplicity of the investment process, transparency in information and transactions, and their constant availability, 24 hours a day to answer any question, even if it is simple.",
+      text: "Trust in MiniLands and invest is the simplicity of the investment process, transparency in information and transactions, and their constant availability, 24 hours a day to answer any question, even if it is simple.",
       rating: 5,
     },
     {
@@ -31,7 +31,7 @@ export default function TestimonialsSection() {
       name: "Ahmed Al Mansouri",
       role: "Business Owner",
       image: "/human-placeholder.jpg",
-      text: "Baytukum has revolutionized my investment strategy. The platform's transparency and professional management have given me confidence in real estate investing. The returns have exceeded my expectations.",
+      text: "MiniLands has revolutionized my investment strategy. The platform's transparency and professional management have given me confidence in real estate investing. The returns have exceeded my expectations.",
       rating: 5,
     },
     {
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
       name: "Fatima Al Zahra",
       role: "Working Professional",
       image: "/human-placeholder.jpg",
-      text: "As a working professional, I appreciate how Baytukum handles everything for me. From property selection to rental management, they've made real estate investment truly passive and profitable.",
+      text: "As a working professional, I appreciate how MiniLands handles everything for me. From property selection to rental management, they've made real estate investment truly passive and profitable.",
       rating: 5,
     },
     {
@@ -47,44 +47,48 @@ export default function TestimonialsSection() {
       name: "Omar Hassan",
       role: "First-time Investor",
       image: "/human-placeholder.jpg",
-      text: "The minimum investment amount made it possible for me to start my real estate journey. Now I have a diversified portfolio and steady rental income. Baytukum's expertise is unmatched.",
+      text: "The minimum investment amount made it possible for me to start my real estate journey. Now I have a diversified portfolio and steady rental income. MiniLands's expertise is unmatched.",
       rating: 5,
     },
-  ]
+  ];
 
   const nextTestimonial = () => {
-    if (isAnimating) return
-    setIsAnimating(true)
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-    setTimeout(() => setIsAnimating(false), 500)
-  }
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
 
   const prevTestimonial = () => {
-    if (isAnimating) return
-    setIsAnimating(true)
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-    setTimeout(() => setIsAnimating(false), 500)
-  }
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
+    setTimeout(() => setIsAnimating(false), 500);
+  };
 
   // Auto-advance testimonials
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isAnimating) {
-        nextTestimonial()
+        nextTestimonial();
       }
-    }, 6000)
+    }, 6000);
 
-    return () => clearInterval(interval)
-  }, [isAnimating])
+    return () => clearInterval(interval);
+  }, [isAnimating]);
 
-  const currentTestimonialData = testimonials[currentTestimonial]
+  const currentTestimonialData = testimonials[currentTestimonial];
 
   return (
     <section className="py-16 bg-background border-t border-white/20">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-accent font-semibold text-lg mb-2">Testimonials</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Hear from Our Satisfied Investors</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Hear from Our Satisfied Investors
+          </h2>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
 
@@ -98,7 +102,9 @@ export default function TestimonialsSection() {
             <div
               key={currentTestimonial}
               className={`transition-all duration-500 ease-in-out ${
-                isAnimating ? "opacity-0 transform translate-y-4" : "opacity-100 transform translate-y-0"
+                isAnimating
+                  ? "opacity-0 transform translate-y-4"
+                  : "opacity-100 transform translate-y-0"
               }`}
             >
               {/* Profile Section */}
@@ -112,11 +118,18 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div className="text-center md:text-left">
-                  <h4 className="font-bold text-gray-900 text-xl mb-1">{currentTestimonialData.name}</h4>
-                  <p className="text-gray-600 mb-3">{currentTestimonialData.role}</p>
+                  <h4 className="font-bold text-gray-900 text-xl mb-1">
+                    {currentTestimonialData.name}
+                  </h4>
+                  <p className="text-gray-600 mb-3">
+                    {currentTestimonialData.role}
+                  </p>
                   <div className="flex items-center justify-center md:justify-start gap-1">
                     {[...Array(currentTestimonialData.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                      <Star
+                        key={i}
+                        className="w-5 h-5 fill-accent text-accent"
+                      />
                     ))}
                   </div>
                 </div>
@@ -148,13 +161,15 @@ export default function TestimonialsSection() {
                   key={index}
                   onClick={() => {
                     if (!isAnimating && index !== currentTestimonial) {
-                      setIsAnimating(true)
-                      setCurrentTestimonial(index)
-                      setTimeout(() => setIsAnimating(false), 500)
+                      setIsAnimating(true);
+                      setCurrentTestimonial(index);
+                      setTimeout(() => setIsAnimating(false), 500);
                     }
                   }}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? "bg-accent w-8" : "bg-white/30 w-2 hover:bg-white/50"
+                    index === currentTestimonial
+                      ? "bg-accent w-8"
+                      : "bg-white/30 w-2 hover:bg-white/50"
                   }`}
                 />
               ))}
@@ -180,5 +195,5 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

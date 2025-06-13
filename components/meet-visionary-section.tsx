@@ -16,7 +16,7 @@ export default function MeetVisionarySection() {
           <div className="space-y-6">
             <div className="flex items-center gap-3 mb-6">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="MiniLands Logo"
                 width={32}
                 height={32}

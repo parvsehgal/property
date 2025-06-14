@@ -207,48 +207,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Download App Section */}
-        <div className="border-t border-white/20 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-              <h4 className="text-white font-semibold mb-2">
-                Download Our App
-              </h4>
-              <p className="text-gray-400 text-sm">
-                Start investing in India real estate today
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <Link
-                href="https://apps.apple.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/app-store.svg"
-                  alt="Download on the App Store"
-                  width={140}
-                  height={42}
-                  className="h-10 w-auto"
-                />
-              </Link>
-              <Link
-                href="https://play.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/google-play.svg"
-                  alt="Get it on Google Play"
-                  width={140}
-                  height={42}
-                  className="h-10 w-auto"
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">

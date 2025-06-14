@@ -72,7 +72,7 @@ export default function DubaiRealEstateSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
         style={{
-          backgroundImage: "url('/main-property.jpg')",
+          backgroundImage: "url('/lux.jpg')",
         }}
       ></div>
 

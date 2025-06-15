@@ -21,10 +21,13 @@ export default function Footer() {
                 width={32}
                 height={32}
               />
-              <span className="text-accent font-semibold text-xl">
+              <span
+                className="text-accent font-semibold text-xl"
+                style={{ color: "#eae8e9" }}
+              >
                 MiniLands
               </span>
-            </div>
+            </div>{" "}
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted partner for real estate investments in India. Making
               property investment accessible to everyone.

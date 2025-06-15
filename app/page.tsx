@@ -5,12 +5,14 @@ import DubaiRealEstateSection from "@/components/dubai-real-estate-section";
 import WhyBaytukumSection from "@/components/why-baytukum-section";
 import HowItWorksSection from "@/components/how-it-works-section";
 import FeaturedProjectsSection from "@/components/featured-projects-section";
+import BlogsSection from "@/components/blogs";
 import InvestorsResourcesSection from "@/components/investors-resources-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import MeetVisionarySection from "@/components/meet-visionary-section";
-import MediaCoverageSection from "@/components/media-coverage-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import ExpertPanelSection from "@/components/expertpanel";
+import YouTubeVideosSection from "@/components/youtube";
 
 export default function Home() {
   return (
@@ -25,9 +27,17 @@ export default function Home() {
               height={40}
               className="h-10 w-auto -mt-4"
             />
-            <span className="text-accent font-semibold text-xl">MiniLands</span>
-          </div>
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1 justify-center">
+            <span
+              className="text-accent font-semibold text-xl"
+              style={{ color: "#eae8e9" }}
+            >
+              MiniLands
+            </span>
+          </div>{" "}
+          <nav
+            className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1 justify-center"
+            style={{ marginLeft: "-100px" }}
+          >
             <Link href="/" className="text-foreground border-b-2 border-accent">
               Home
             </Link>
@@ -67,15 +77,8 @@ export default function Home() {
             >
               Login
             </Link>
-          </nav>
-          <div className="flex items-center gap-4 ml-auto">
-            <Link
-              href="/#"
-              className="text-muted-foreground text-sm font-medium hidden md:block hover:text-foreground"
-            >
-              Download App
-            </Link>
-          </div>
+          </nav>{" "}
+          <div className="flex items-center gap-4 ml-auto"></div>
         </div>
       </header>
 
@@ -127,7 +130,10 @@ export default function Home() {
         <DubaiRealEstateSection />
         <WhyBaytukumSection />
         <HowItWorksSection />
+        <YouTubeVideosSection />
+        <BlogsSection />
         <FeaturedProjectsSection />
+        <ExpertPanelSection />
         <InvestorsResourcesSection />
         <TestimonialsSection />
         <MeetVisionarySection />

@@ -203,22 +203,20 @@ export default function FeaturedProjectsSection() {
             <Button
               onClick={() => handleTabChange("residential")}
               disabled={isAnimating}
-              className={`px-8 py-2 rounded-full font-medium transition-all duration-300 ${
-                activeTab === "residential"
+              className={`px-8 py-2 rounded-full font-medium transition-all duration-300 ${activeTab === "residential"
                   ? "bg-accent text-background hover:bg-accent/90 transform scale-105"
                   : "bg-transparent border border-white/30 text-white hover:border-accent hover:text-accent hover:scale-105"
-              }`}
+                }`}
             >
               Residential
             </Button>
             <Button
               onClick={() => handleTabChange("commercial")}
               disabled={isAnimating}
-              className={`px-8 py-2 rounded-full font-medium transition-all duration-300 ${
-                activeTab === "commercial"
+              className={`px-8 py-2 rounded-full font-medium transition-all duration-300 ${activeTab === "commercial"
                   ? "bg-accent text-background hover:bg-accent/90 transform scale-105"
                   : "bg-transparent border border-white/30 text-white hover:border-accent hover:text-accent hover:scale-105"
-              }`}
+                }`}
             >
               Commercial
             </Button>
@@ -254,130 +252,98 @@ export default function FeaturedProjectsSection() {
           {/* Property Cards Container */}
           <div className="px-16 overflow-hidden">
             <div
-              className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ease-in-out ${
-                isAnimating
+              className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ease-in-out ${isAnimating
                   ? "transform translate-x-2 opacity-90"
                   : "transform translate-x-0 opacity-100"
-              }`}
+                }`}
             >
               {visibleProperties.map((property, index) => (
                 <div
                   key={property.id}
-                  className={`bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-white/10 hover:border-accent/50 ${
-                    isAnimating ? "animate-pulse" : ""
-                  }`}
+                  className="bg-white/8 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-white/8 hover:border-white/15"
                   style={{
-                    animationDelay: `${index * 100}ms`,
+                    animationDelay: `${index * 150}ms`,
                   }}
                 >
                   {/* Property Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-56 overflow-hidden">
                     <Image
                       src={property.image || "/placeholder.svg"}
                       alt={property.name}
                       fill
-                      className="object-cover transition-transform duration-300 hover:scale-110"
+                      className="object-cover transition-transform duration-700 hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
 
-                    {/* Property Type Badge */}
-                    <div className="absolute top-3 left-3">
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium text-white backdrop-blur-sm ${
-                          property.type === "residential"
-                            ? "bg-green-600/80"
-                            : "bg-blue-600/80"
-                        }`}
-                      >
-                        {property.type === "residential"
-                          ? "Residential"
-                          : "Commercial"}
-                      </span>
-                    </div>
-
-                    {/* Returns Badge */}
-                    <div className="absolute top-3 right-3">
-                      <span className="bg-accent/90 text-background px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm">
+                    {/* Single Top Badge - Returns */}
+                    <div className="absolute top-4 right-4">
+                      <span className="bg-white/20 text-white px-3 py-1.5 rounded-lg text-sm font-medium backdrop-blur-md border border-white/10">
                         {property.projectedReturns}
-                      </span>
-                    </div>
-
-                    {/* Investment Amount */}
-                    <div className="absolute bottom-3 left-3">
-                      <span className="bg-black/70 text-white px-3 py-1 rounded-full text-sm font-semibold backdrop-blur-sm">
-                        {property.minInvestment}
                       </span>
                     </div>
                   </div>
 
                   {/* Property Details */}
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-white mb-2 hover:text-accent transition-colors duration-300">
-                      {property.name}
-                    </h3>
-
-                    <div className="flex items-center gap-2 mb-4">
-                      <MapPin className="w-4 h-4 text-accent" />
-                      <span className="text-white/70 text-sm">
-                        {property.location}
-                      </span>
+                  <div className="p-6 space-y-4">
+                    {/* Title and Location */}
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-2 leading-tight">
+                        {property.name}
+                      </h3>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-white/50" />
+                        <span className="text-white/60 text-sm">
+                          {property.location}
+                        </span>
+                      </div>
                     </div>
 
-                    {/* Metrics */}
-                    <div className="space-y-3 mb-6">
-                      <div className="flex justify-between items-center hover:bg-white/5 p-2 rounded transition-colors duration-200">
-                        <span className="text-white/70 text-sm">
+                    {/* Key Metrics - Row Layout */}
+                    <div className="bg-white/5 rounded-lg px-3 py-2">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-white/60 text-sm">
                           Projected Returns
                         </span>
-                        <span className="text-accent font-semibold">
+                        <span className="text-white font-medium text-sm">
                           {property.projectedReturns}
                         </span>
                       </div>
-                      <div className="flex justify-between items-center hover:bg-white/5 p-2 rounded transition-colors duration-200">
-                        <span className="text-white/70 text-sm">
-                          Min. Investment
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-white/60 text-sm">
+                          Min Investment
                         </span>
-                        <span className="text-white font-semibold">
+                        <span className="text-white font-medium text-sm">
                           {property.minInvestment}
                         </span>
                       </div>
-                      <div className="flex justify-between items-center hover:bg-white/5 p-2 rounded transition-colors duration-200">
-                        <span className="text-white/70 text-sm">Rate</span>
-                        <span className="text-white font-semibold">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-white/60 text-sm">Rate</span>
+                        <span className="text-white font-medium text-sm">
                           {property.rate}
                         </span>
                       </div>
                     </div>
 
-                    {/* Plot Sizes */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-medium text-white/80 mb-2">
-                        Plot Sizes Available
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {property.plotSizes.slice(0, 2).map((size, idx) => (
-                          <span
-                            key={idx}
-                            className="bg-white/10 text-white/80 px-2 py-1 rounded text-xs border border-white/10"
-                          >
-                            {size}
-                          </span>
-                        ))}
-                        {property.plotSizes.length > 2 && (
-                          <span className="bg-accent/20 text-accent px-2 py-1 rounded text-xs border border-accent/30">
-                            +{property.plotSizes.length - 2} more
-                          </span>
-                        )}
-                      </div>
+                    {/* Property Type - Subtle */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-white/40 text-xs uppercase tracking-wider">
+                        {property.type === "residential"
+                          ? "Residential"
+                          : "Commercial"}
+                      </span>
+                      <span className="text-white/40 text-xs">
+                        {property.plotSizes.length} plot size
+                        {property.plotSizes.length !== 1 ? "s" : ""}
+                      </span>
                     </div>
 
-                    {/* View Details Button */}
-                    <Button className="w-full bg-accent text-background hover:bg-accent/90 font-semibold transition-all duration-300 transform hover:scale-105 border-0">
+                    {/* View Details Button - Minimal */}
+                    <Button className="w-full bg-white/10 text-white hover:bg-white/15 font-medium transition-all duration-300 border border-white/10 hover:border-white/20 rounded-lg py-2">
                       View Details
                     </Button>
                   </div>
                 </div>
-              ))}
+              ))}{" "}
             </div>
           </div>
 

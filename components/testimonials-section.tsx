@@ -101,11 +101,10 @@ export default function TestimonialsSection() {
             {/* Testimonial Content */}
             <div
               key={currentTestimonial}
-              className={`transition-all duration-500 ease-in-out ${
-                isAnimating
+              className={`transition-all duration-500 ease-in-out ${isAnimating
                   ? "opacity-0 transform translate-y-4"
                   : "opacity-100 transform translate-y-0"
-              }`}
+                }`}
             >
               {/* Profile Section */}
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
@@ -128,7 +127,7 @@ export default function TestimonialsSection() {
                     {[...Array(currentTestimonialData.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-5 h-5 fill-accent text-accent"
+                        className="w-5 h-5 fill-yellow-400 text-yellow-400"
                       />
                     ))}
                   </div>
@@ -166,11 +165,10 @@ export default function TestimonialsSection() {
                       setTimeout(() => setIsAnimating(false), 500);
                     }
                   }}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial
+                  className={`h-2 rounded-full transition-all duration-300 ${index === currentTestimonial
                       ? "bg-accent w-8"
                       : "bg-white/30 w-2 hover:bg-white/50"
-                  }`}
+                    }`}
                 />
               ))}
             </div>

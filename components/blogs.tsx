@@ -67,7 +67,7 @@ export default function BlogsSection() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300">
+          <button className="bg-accent hover:bg-accent/90 text-black px-8 py-3 rounded-full font-medium transition-colors duration-300">
             View All Articles
           </button>
         </div>

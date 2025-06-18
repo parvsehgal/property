@@ -23,9 +23,11 @@ export default function YouTubeVideosSection() {
     },
   ];
 
+  const [featuredVideo, ...sideVideos] = videos;
+
   return (
     <section className="py-16 bg-background border-t border-white/20">
-      <div className="container max-w-6xl mx-auto px-4">
+      <div className="container max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Our Videos
@@ -33,17 +35,15 @@ export default function YouTubeVideosSection() {
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {videos.map((video, index) => (
-            <div
-              key={index}
-              className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-300 group"
-            >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Featured Video - Large on the left */}
+          <div className="lg:col-span-2">
+            <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-300 group">
               <div className="relative">
                 <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
                   <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
+                    src={`https://www.youtube.com/embed/${featuredVideo.id}`}
+                    title={featuredVideo.title}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -51,17 +51,55 @@ export default function YouTubeVideosSection() {
                   ></iframe>
                 </div>
                 <div className="absolute top-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-xs">
-                  {video.duration}
+                  {featuredVideo.duration}
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-white text-lg font-bold mb-3">
-                  {video.title}
+                <h3 className="text-white text-xl font-bold mb-3">
+                  {featuredVideo.title}
                 </h3>
-                <p className="text-gray-300 text-sm">{video.description}</p>
+                <p className="text-gray-300 text-sm">
+                  {featuredVideo.description}
+                </p>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Side Videos - Smaller on the right */}
+          <div className="space-y-4">
+            {sideVideos.map((video, index) => (
+              <div
+                key={index}
+                className="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all duration-300 group"
+              >
+                <div className="flex sm:block lg:flex">
+                  <div className="relative flex-shrink-0 w-32 sm:w-full lg:w-32">
+                    <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${video.id}`}
+                        title={video.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                      ></iframe>
+                    </div>
+                    <div className="absolute top-2 right-2 bg-black/70 text-white px-1 py-0.5 rounded text-xs">
+                      {video.duration}
+                    </div>
+                  </div>
+                  <div className="p-3 flex-1 min-w-0">
+                    <h4 className="text-white text-sm font-semibold mb-1 line-clamp-2 leading-tight">
+                      {video.title}
+                    </h4>
+                    <p className="text-gray-400 text-xs line-clamp-2">
+                      {video.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">

@@ -13,6 +13,7 @@ import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import ExpertPanelSection from "@/components/expertpanel";
 import YouTubeVideosSection from "@/components/youtube";
+import YouTubeShortsSection from "@/components/shorts";
 
 export default function Home() {
   return (
@@ -131,6 +132,7 @@ export default function Home() {
         <WhyBaytukumSection />
         <HowItWorksSection />
         <YouTubeVideosSection />
+        <YouTubeShortsSection />
         <BlogsSection />
         <FeaturedProjectsSection />
         <ExpertPanelSection />

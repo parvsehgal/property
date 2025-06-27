@@ -43,19 +43,19 @@ export default function Home() {
               Home
             </Link>
             <Link
-              href="/#"
+              href="/about"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
               About Us
             </Link>
             <Link
-              href="/#"
+              href="/properties"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
               Properties
             </Link>
             <Link
-              href="/#"
+              href="/expert"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
               Expert Panel
@@ -92,24 +92,20 @@ export default function Home() {
             {/* Left: Text */}
             <div className="lg:w-1/2 max-w-2xl space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Invest in India
+                Start Building
                 <br />
-                Real Estate with
+                wealth with
                 <br />
                 MiniLands
               </h1>
 
               <p className="text-xl md:text-2xl text-accent font-medium">
-                Your Path to Passive Income and
-                <br />
-                Capital Appreciation
+                India’s Most Trusted Fractional Real Estate Platform
               </p>
 
               <div className="pt-4">
                 <p className="text-white text-sm md:text-base">
-                  Invest from AED 5,000 | Golden Visa Opportunities | Expert
-                  <br />
-                  Management | Tax-Free Returns | Diverse Portfolio
+                  Invest from as low as Rs. 10L | Easy Real Estate Access | Expert Managed | Smart Returns | Start Small, Grow Big
                 </p>
               </div>
             </div>

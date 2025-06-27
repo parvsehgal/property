@@ -7,7 +7,7 @@ export default function TrustSection() {
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            What is fractional real estate
+            🤝Lets Build Connections
           </h2>
           <div className="flex justify-center space-x-6 mb-6">
             <a

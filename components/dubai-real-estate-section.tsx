@@ -15,7 +15,7 @@ export default function DubaiRealEstateSection() {
   const features = [
     {
       icon: TrendingUp,
-      title: "Strong economy",
+      title: "India’s Economy Drives Success",
       description: "Driven by tourism, trade, and finance.",
     },
     {
@@ -82,7 +82,7 @@ export default function DubaiRealEstateSection() {
       <div className="container max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-4xl mx-auto">
-            Why India Real Estate Is Outperforming Global Markets?
+            Why India’s Fractional Real Estate is Outperforming Global Market ?
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>

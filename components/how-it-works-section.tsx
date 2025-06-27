@@ -76,13 +76,13 @@ export default function HowItWorksSection() {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Curved connecting path */}
+          {/* Curved connecting path - Subtly shifted to the right */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
-            viewBox="0 0 800 1400"
+            viewBox="0 0 800 1800"
           >
             <path
-              d="M400 50 Q600 150 400 250 Q200 350 400 450 Q600 550 400 650 Q200 750 400 850 Q600 950 400 1050 Q200 1150 400 1250"
+              d="M420 50 Q620 150 420 250 Q220 350 488 450 Q620 550 420 650 Q220 750 420 850 Q620 950 420 1050 Q220 1150 420 1250 Q620 1350 420 1450 Q220 1550 420 1650"
               stroke="url(#gradient)"
               strokeWidth="2"
               fill="none"
@@ -97,11 +97,11 @@ export default function HowItWorksSection() {
             </defs>
           </svg>
 
-          {/* Start dot */}
-          <div className="absolute top-12 left-1/2 w-4 h-4 bg-accent rounded-full transform -translate-x-2 z-10"></div>
+          {/* Start dot - Slightly shifted to match new path */}
+          <div className="absolute top-12 left-1/2 w-4 h-4 bg-accent rounded-full transform translate-x-1 z-10"></div>
 
-          {/* End dot */}
-          <div className="absolute bottom-12 left-1/2 w-4 h-4 bg-accent rounded-full transform -translate-x-2 z-10"></div>
+          {/* End dot - Slightly shifted to match new path */}
+          <div className="absolute bottom-12 left-1/2 w-4 h-4 bg-accent rounded-full transform translate-x-1 z-10"></div>
 
           <div className="relative z-20 space-y-24">
             {steps.map((step, index) => {

@@ -102,8 +102,8 @@ export default function TestimonialsSection() {
             <div
               key={currentTestimonial}
               className={`transition-all duration-500 ease-in-out ${isAnimating
-                  ? "opacity-0 transform translate-y-4"
-                  : "opacity-100 transform translate-y-0"
+                ? "opacity-0 transform translate-y-4"
+                : "opacity-100 transform translate-y-0"
                 }`}
             >
               {/* Profile Section */}
@@ -166,8 +166,8 @@ export default function TestimonialsSection() {
                     }
                   }}
                   className={`h-2 rounded-full transition-all duration-300 ${index === currentTestimonial
-                      ? "bg-accent w-8"
-                      : "bg-white/30 w-2 hover:bg-white/50"
+                    ? "bg-accent w-8"
+                    : "bg-white/30 w-2 hover:bg-white/50"
                     }`}
                 />
               ))}

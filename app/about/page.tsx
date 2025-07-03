@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Linkedin, Send, User, MessageSquare, Building } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowLeft, Linkedin, Send, User, MessageSquare, Building } from 'lucide-react';
 
 const AboutUsPage = () => {
   const [formData, setFormData] = useState({
@@ -53,6 +53,16 @@ const AboutUsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+
+      <div className="fixed top-6 left-6 z-40">
+        <a
+          href="/"
+          className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full border border-white/20 hover:border-accent/50 transition-all duration-300 flex items-center gap-2 group"
+        >
+          <ArrowLeft size={20} className="group-hover:text-accent transition-colors" />
+          <span className="text-sm font-medium group-hover:text-accent transition-colors">Back to Home</span>
+        </a>
+      </div>
       {/* Hero Section with Image */}
       <section className="relative h-96 bg-gradient-to-br from-background via-background/80 to-background">
         <div className="absolute inset-0 bg-black/40"></div>
@@ -68,7 +78,6 @@ const AboutUsPage = () => {
           </div>
         </div>
       </section>
-
       {/* Mission Section */}
       <section className="py-16 bg-background border-t border-white/20">
         <div className="container max-w-7xl mx-auto px-4">

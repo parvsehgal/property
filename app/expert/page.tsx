@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Image from "next/image";
-import { Award, Users, TrendingUp, Shield, Mail, Linkedin, Twitter, ChevronRight } from 'lucide-react';
+import { Award, Users, TrendingUp, Shield, Mail, Linkedin, Twitter, ChevronRight, ArrowLeft } from 'lucide-react';
 
 export default function ExpertPanelPage() {
   const [selectedExpert, setSelectedExpert] = useState(null);
@@ -198,6 +198,17 @@ export default function ExpertPanelPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Back Button */}
+      <div className="fixed top-6 left-6 z-40">
+        <a
+          href="/"
+          className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full border border-white/20 hover:border-accent/50 transition-all duration-300 flex items-center gap-2 group"
+        >
+          <ArrowLeft size={20} className="group-hover:text-accent transition-colors" />
+          <span className="text-sm font-medium group-hover:text-accent transition-colors">Back to Home</span>
+        </a>
+      </div>
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4">
         <div className="container max-w-7xl mx-auto">

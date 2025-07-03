@@ -1,61 +1,53 @@
 import { Button } from "@/components/ui/button";
-import {
-  Search,
-  FileText,
-  CreditCard,
-  Home,
-  Settings,
-  DollarSign,
-  TrendingUp,
-} from "lucide-react";
+import * as lucideReact from "lucide-react";
 
 export default function HowItWorksSection() {
   const steps = [
     {
       number: "01",
-      icon: Search,
+      icon: lucideReact.Search,
       title: "Curated Investment Opportunities",
       description:
         "Identify and select prime real estate properties in India, meticulously vetting them for potential returns.",
     },
     {
       number: "02",
-      icon: FileText,
+      icon: lucideReact.FileText,
       title: "Transparent Property Details",
       description:
         "Provide comprehensive property listings, including detailed documentation, financial projections, and risk assessments.",
     },
     {
       number: "03",
-      icon: CreditCard,
+      icon: lucideReact.CreditCard,
       title: "Seamless Funding Management",
       description:
         "Efficiently manage the crowdfunding process, ensuring secure and transparent transactions for investors.",
     },
     {
       number: "04",
-      icon: Home,
+      icon: lucideReact.Home,
       title: "Hassle-Free Property Acquisition",
       description:
         "Handle all legal and administrative procedures, facilitating a smooth property acquisition on behalf of investors.",
     },
     {
       number: "05",
-      icon: Settings,
+      icon: lucideReact.Settings,
       title: "Dedicated Investment Management",
       description:
         "Provide ongoing property management services, including rental collection, maintenance, and tenant relations.",
     },
     {
       number: "06",
-      icon: DollarSign,
+      icon: lucideReact.DollarSign,
       title: "Income Distribution",
       description:
         "Distribute rental income to investors in a timely and transparent manner, ensuring maximum returns.",
     },
     {
       number: "07",
-      icon: TrendingUp,
+      icon: lucideReact.TrendingUp,
       title: "Profitable Property Disposition",
       description:
         "Assist investors in selling their properties at optimal market prices, ensuring a profitable exit strategy.",

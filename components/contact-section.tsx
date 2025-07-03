@@ -38,7 +38,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Phone</h4>
-                  <p className="text-gray-300">+971 4 123 4567</p>
+                  <p className="text-gray-300">+91 9294553783</p>
                 </div>
               </div>
 
@@ -48,7 +48,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Email</h4>
-                  <p className="text-gray-300">info@minilands.ae</p>
+                  <p className="text-gray-300">info@minilands.in</p>
                 </div>
               </div>
 
@@ -59,7 +59,8 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-white font-semibold mb-1">Address</h4>
                   <p className="text-gray-300">
-                    India International Financial Centre
+                    401 , Heritage Building , 582 , MG Road , Oppsite Hukumchand
+                    Ghanta Ghar ,New Palasia , Indore , Madhya Pradesh ,452001
                     <br />
                     India
                   </p>
@@ -75,9 +76,8 @@ export default function ContactSection() {
                     Business Hours
                   </h4>
                   <p className="text-gray-300">
-                    Sunday - Thursday: 9:00 AM - 6:00 PM
+                    10:00 AM – 7:00 PM ( Monday – Saturday )
                     <br />
-                    Friday - Saturday: Closed
                   </p>
                 </div>
               </div>

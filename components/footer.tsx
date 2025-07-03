@@ -90,22 +90,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-accent transition-colors text-sm"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/golden-visa"
-                  className="text-gray-400 hover:text-accent transition-colors text-sm"
-                >
-                  Golden Visa
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/properties"
                   className="text-gray-400 hover:text-accent transition-colors text-sm"
                 >
@@ -137,18 +121,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/portfolio"
+                  href="/expert"
                   className="text-gray-400 hover:text-accent transition-colors text-sm"
                 >
-                  Portfolio
+                  Expert View
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/returns"
+                  href="/portfolio"
                   className="text-gray-400 hover:text-accent transition-colors text-sm"
                 >
-                  Returns
+                  Portfolio
                 </Link>
               </li>
               <li>
@@ -198,14 +182,6 @@ export default function Footer() {
                   Terms of Service
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/compliance"
-                  className="text-gray-400 hover:text-accent transition-colors text-sm"
-                >
-                  Compliance
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
@@ -213,23 +189,9 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} MiniLands. All rights reserved. |
-            Regulated by DFSA | Licensed by DIFC
+            © 2025 MiniLands. All rights reserved. | Company Of Lasar Real
+            Estate Venture Private limited
           </p>
-          <div className="flex items-center gap-6">
-            <Link
-              href="/cookies"
-              className="text-gray-400 hover:text-accent text-sm transition-colors"
-            >
-              Cookie Policy
-            </Link>
-            <Link
-              href="/disclaimer"
-              className="text-gray-400 hover:text-accent text-sm transition-colors"
-            >
-              Disclaimer
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -14,57 +14,48 @@ export default function WhyBaytukumSection() {
   const advantages = [
     {
       icon: DollarSign,
-      title: "Minimal Entry Barriers",
-      description:
-        "Invest with as little as AED 5000, making real estate investment accessible to everyone.",
+      title: "Low Investment, Big Opportunities",
+      description: "Start with just Rs. 10L , accessible to all.",
     },
     {
       icon: Users,
-      title: "Expert Management",
-      description:
-        "Our team of experienced professionals handles all aspects of your investment, from property selection to rental management.",
+      title: "Professionally Managed Properties",
+      description: "Experts handle selection, leasing, and maintenance.",
     },
     {
       icon: Smartphone,
-      title: "All-Digital Experience",
-      description:
-        "Manage your investments conveniently through our user-friendly online platform.",
+      title: "Fully Digital, Seamless Experience",
+      description: "Track and manage investments anytime, anywhere.",
     },
     {
       icon: Eye,
-      title: "Transparent Processes",
-      description:
-        "Benefit from our transparent investment processes, providing you with clear information and updates.",
+      title: "Transparent, Hassle-Free Process",
+      description: "Clear, honest updates on every investment step.",
     },
     {
       icon: TrendingUp,
-      title: "Competitive Returns",
-      description:
-        "Enjoy competitive returns on your investment, with potential for both rental income and capital appreciation.",
+      title: "Competitive Returns, Steady Growth",
+      description: "Earn rental income plus capital appreciation.",
     },
     {
       icon: Shield,
-      title: "Secure Platform",
-      description:
-        "Our platform is designed with the highest security standards to protect your investments.",
+      title: "Safe, Secure Investment Platform",
+      description: "Top-tier security for your peace of mind.",
     },
     {
       icon: Banknote,
-      title: "Passive Income",
-      description:
-        "Generate rental income without the hassle of property management.",
+      title: "Effortless Passive Income",
+      description: "Earn without dealing with property hassles.",
     },
     {
       icon: BarChart3,
-      title: "Long-Term Capital Appreciation",
-      description:
-        "Benefit from the potential for long-term growth in property values.",
+      title: "Long-Term Wealth Creation",
+      description: "Benefit from rising real estate values over time.",
     },
     {
       icon: PieChart,
-      title: "Diversified Portfolio",
-      description:
-        "Invest in a diversified portfolio of properties, reducing risk and maximizing returns.",
+      title: "Diversify Easily, Minimize Risk",
+      description: "Build a multi-property portfolio with small amounts.",
     },
   ];
 
@@ -76,15 +67,13 @@ export default function WhyBaytukumSection() {
             Why Invest with MiniLands?
           </h2>
           <p className="text-xl text-accent font-medium mb-4">
-            Experience the MiniLands Advantage | Invest Smarter, Earn More
+            Secure, Transparent, and Professionally Managed for Steady Growth.
           </p>
           <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
           <p className="text-white text-lg max-w-4xl mx-auto leading-relaxed">
-            Investing in India's real estate market has never been more
-            accessible. With MiniLands, you can fractionally own prime
-            properties and reap the rewards of rental yield and capital
-            appreciation. As a leading crowdfunding platform in India, we offer
-            a unique and advantageous approach to real estate investment.
+            Step into India’s booming real estate market with fractional
+            ownership—affordable, hassle-free, and high-return. Minilands makes
+            it possible for anyone to start small and grow big.
           </p>
         </div>
 

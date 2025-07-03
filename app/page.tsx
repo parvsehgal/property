@@ -105,7 +105,8 @@ export default function Home() {
 
               <div className="pt-4">
                 <p className="text-white text-sm md:text-base">
-                  Invest from as low as Rs. 10L | Easy Real Estate Access | Expert Managed | Smart Returns | Start Small, Grow Big
+                  Invest from as low as Rs. 10L | Easy Real Estate Access |
+                  Expert Managed | Smart Returns | Start Small, Grow Big
                 </p>
               </div>
             </div>

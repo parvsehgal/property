@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   MapPin,
   Building,
   Home,
+  ArrowLeft,
 } from "lucide-react";
 
 interface Property {
@@ -282,6 +284,17 @@ export default function PropertiesPage({
       {/* Header */}
       <div className="bg-background ">
         <div className="container max-w-7xl mx-auto px-4 py-8">
+          {/* Back Button */}
+          <div className="fixed top-6 left-6 z-40">
+            <a
+              href="/"
+              className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full border border-white/20 hover:border-accent/50 transition-all duration-300 flex items-center gap-2 group"
+            >
+              <ArrowLeft size={20} className="group-hover:text-accent transition-colors" />
+              <span className="text-sm font-medium group-hover:text-accent transition-colors">Back to Home</span>
+            </a>
+          </div>
+
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Our Properties

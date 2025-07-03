@@ -16,53 +16,53 @@ export default function DubaiRealEstateSection() {
     {
       icon: TrendingUp,
       title: "India’s Economy Drives Success",
-      description: "Driven by tourism, trade, and finance.",
+      description: "Strong economy fuels real estate growth.",
     },
     {
       icon: Building,
-      title: "Government support",
+      title: "Policy Powers Fractional Boom",
       description:
-        "Infrastructure development, regulatory reforms, and investor-friendly policies.",
+        "Reforms make property investing safer.",
     },
     {
       icon: Users,
-      title: "Growing population",
-      description: "Creating demand for housing and commercial spaces.",
+      title: "Urban Growth Sparks Demand",
+      description: "city expansion boosts shared ownership.",
     },
     {
       icon: Globe,
-      title: "Global tourism hub",
-      description: "Attracting millions of visitors annually.",
+      title: "Business Hubs Attract Investors",
+      description: "Prime locations welcome global buyers.",
     },
     {
       icon: DollarSign,
-      title: "High rental yields and capital appreciation",
-      description: "Offering attractive investment returns.",
+      title: "High Yields Set Apart",
+      description: "Steady, strong returns for investors.",
     },
     {
       icon: MapPin,
-      title: "Strategic location",
-      description: "Providing excellent connectivity and accessibility.",
+      title: "Top Cities, Growth Zones",
+      description: "Key markets show rising potential.",
     },
     {
       icon: Shield,
-      title: "Stable political environment",
-      description: "Creating a favorable investment climate.",
+      title: "Secure, Transparent Investments",
+      description: "Regulated platforms build investor trust.",
     },
     {
       icon: Star,
-      title: "Thriving economy and robust demand",
-      description: "Fueled by both local and international investors.",
+      title: "Global Investors Choose India",
+      description: "Worldwide backing for fractional assets.",
     },
     {
       icon: Landmark,
-      title: "World-class infrastructure and luxurious lifestyle",
-      description: "Enhancing its appeal as a place to live and invest.",
+      title: "Premium Properties, Small Shares",
+      description: "Big dreams via small investments.",
     },
     {
       icon: Receipt,
-      title: "Tax-friendly policies",
-      description: "Making it a favorable investment destination.",
+      title: "Easy Start, Tax Perks",
+      description: "Simple entry with tax benefits.",
     },
   ];
 

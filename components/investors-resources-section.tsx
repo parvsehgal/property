@@ -1,17 +1,15 @@
 "use client";
-
 import { useState } from "react";
-import { Slider } from "@/components/ui/slider";
 
 export default function InvestorsResourcesSection() {
-  const [investmentAmount, setInvestmentAmount] = useState([200000]);
-  const [rentalYield, setRentalYield] = useState([7.5]);
-  const [appreciation, setAppreciation] = useState([7.5]);
+  const [investmentAmount, setInvestmentAmount] = useState(2000000);
+  const [rentalYield, setRentalYield] = useState(7.5);
+  const [appreciation, setAppreciation] = useState(7.5);
 
   const calculateReturns = () => {
-    const amount = investmentAmount[0];
-    const yield_rate = rentalYield[0] / 100;
-    const appreciation_rate = appreciation[0] / 100;
+    const amount = investmentAmount;
+    const yield_rate = rentalYield / 100;
+    const appreciation_rate = appreciation / 100;
 
     const years = [1, 2, 3, 4, 5];
     return years.map((year) => {
@@ -29,20 +27,20 @@ export default function InvestorsResourcesSection() {
 
   const returns = calculateReturns();
   const totalROI = returns[4].total;
-  const finalValue = investmentAmount[0] + totalROI;
-  const avgReturn = (totalROI / investmentAmount[0] / 5) * 100;
+  const finalValue = investmentAmount + totalROI;
+  const avgReturn = (totalROI / investmentAmount / 5) * 100;
 
   return (
-    <section className="py-16 bg-background border-t border-white/20">
-      <div className="container max-w-6xl mx-auto">
+    <section className="py-16 bg-gradient-to-b from-gray-900 to-gray-800 border-t border-white/20">
+      <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Investors Resources
           </h2>
-          <p className="text-lg text-muted-foreground mb-4">
+          <p className="text-lg text-gray-300 mb-4">
             Your one-stop resource for real estate investment.
           </p>
-          <div className="w-24 h-1 bg-accent mx-auto"></div>
+          <div className="w-24 h-1 bg-blue-500 mx-auto"></div>
         </div>
 
         <div className="max-w-5xl mx-auto bg-white rounded-2xl p-8 border border-gray-200 shadow-xl">
@@ -58,16 +56,14 @@ export default function InvestorsResourcesSection() {
                   Enter Investment Amount
                 </label>
                 <div className="flex items-center gap-4">
-                  <span className="text-gray-900 font-medium">AED</span>
+                  <span className="text-gray-900 font-medium">₹</span>
                   <input
                     type="number"
-                    value={investmentAmount[0]}
+                    value={investmentAmount}
                     onChange={(e) =>
-                      setInvestmentAmount([
-                        Number.parseInt(e.target.value) || 0,
-                      ])
+                      setInvestmentAmount(Number(e.target.value) || 0)
                     }
-                    className="flex-1 bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
+                    className="flex-1 bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -77,18 +73,23 @@ export default function InvestorsResourcesSection() {
                   <label className="text-gray-900 text-lg font-semibold">
                     Net Rental Yield %
                   </label>
-                  <span className="text-accent font-bold text-lg">
-                    {rentalYield[0]}%
+                  <span className="text-blue-600 font-bold text-lg">
+                    {rentalYield}%
                   </span>
                 </div>
-                <Slider
+                <input
+                  type="range"
+                  min="1"
+                  max="15"
+                  step="0.1"
                   value={rentalYield}
-                  onValueChange={setRentalYield}
-                  max={15}
-                  min={1}
-                  step={0.1}
-                  className="w-full"
+                  onChange={(e) => setRentalYield(Number(e.target.value))}
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
                 />
+                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>1%</span>
+                  <span>15%</span>
+                </div>
               </div>
 
               <div>
@@ -96,18 +97,23 @@ export default function InvestorsResourcesSection() {
                   <label className="text-gray-900 text-lg font-semibold">
                     Annual Appreciation %
                   </label>
-                  <span className="text-accent font-bold text-lg">
-                    {appreciation[0]}%
+                  <span className="text-blue-600 font-bold text-lg">
+                    {appreciation}%
                   </span>
                 </div>
-                <Slider
+                <input
+                  type="range"
+                  min="1"
+                  max="15"
+                  step="0.1"
                   value={appreciation}
-                  onValueChange={setAppreciation}
-                  max={15}
-                  min={1}
-                  step={0.1}
-                  className="w-full"
+                  onChange={(e) => setAppreciation(Number(e.target.value))}
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
                 />
+                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>1%</span>
+                  <span>15%</span>
+                </div>
               </div>
             </div>
 
@@ -120,16 +126,16 @@ export default function InvestorsResourcesSection() {
                     Total Return Rental (in 5 Years)
                   </span>
                   <span className="flex items-center gap-2">
-                    <div className="w-4 h-4 bg-accent rounded"></div>
+                    <div className="w-4 h-4 bg-blue-500 rounded"></div>
                     Total Capital Appreciation (in 5 Years)
                   </span>
                 </div>
                 <div className="flex justify-between text-gray-900 font-semibold mb-4">
                   <span>
-                    AED {Math.round(returns[4].rental).toLocaleString("en-us")}
+                    ₹ {Math.round(returns[4].rental).toLocaleString("en-IN")}
                   </span>
                   <span>
-                    AED {Math.round(returns[4].capital).toLocaleString("en-us")}
+                    ₹ {Math.round(returns[4].capital).toLocaleString("en-IN")}
                   </span>
                 </div>
               </div>
@@ -138,23 +144,25 @@ export default function InvestorsResourcesSection() {
               <div className="flex items-end justify-between h-40 mb-6 bg-gray-50 rounded-lg p-4">
                 {returns.map((data, index) => {
                   const maxValue = Math.max(...returns.map((r) => r.total));
-                  const rentalHeight = (data.rental / maxValue) * 100;
-                  const capitalHeight = (data.capital / maxValue) * 100;
+                  const rentalHeight =
+                    maxValue > 0 ? (data.rental / maxValue) * 120 : 4;
+                  const capitalHeight =
+                    maxValue > 0 ? (data.capital / maxValue) * 120 : 4;
 
                   return (
                     <div key={index} className="flex flex-col items-center">
                       <div className="flex flex-col items-center mb-2">
                         <div
-                          className="w-8 bg-accent rounded-t"
+                          className="w-8 bg-blue-500 rounded-t"
                           style={{
-                            height: `${capitalHeight}%`,
+                            height: `${capitalHeight}px`,
                             minHeight: "4px",
                           }}
                         ></div>
                         <div
                           className="w-8 bg-green-500 rounded-b"
                           style={{
-                            height: `${rentalHeight}%`,
+                            height: `${rentalHeight}px`,
                             minHeight: "4px",
                           }}
                         ></div>
@@ -172,21 +180,21 @@ export default function InvestorsResourcesSection() {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Avg Annualized Return</span>
                   <span className="text-gray-900 font-semibold">
-                    {avgReturn.toFixed(0)}%
+                    {avgReturn.toFixed(1)}%
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Total ROI</span>
                   <span className="text-gray-900 font-semibold">
-                    AED {Math.round(totalROI).toLocaleString("en-US")}
+                    ₹ {Math.round(totalROI).toLocaleString("en-IN")}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">
                     Value of Investment After 5 Years
                   </span>
-                  <span className="text-accent font-bold">
-                    AED {Math.round(finalValue).toLocaleString("en-us")}
+                  <span className="text-blue-600 font-bold">
+                    ₹ {Math.round(finalValue).toLocaleString("en-IN")}
                   </span>
                 </div>
               </div>
@@ -194,6 +202,28 @@ export default function InvestorsResourcesSection() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .slider::-webkit-slider-thumb {
+          appearance: none;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: #3b82f6;
+          cursor: pointer;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider::-moz-range-thumb {
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: #3b82f6;
+          cursor: pointer;
+          border: none;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+      `}</style>
     </section>
   );
 }

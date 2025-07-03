@@ -1,64 +1,56 @@
 import { Button } from "@/components/ui/button";
-import {
-  Search,
-  FileText,
-  CreditCard,
-  Home,
-  Settings,
-  DollarSign,
-  TrendingUp,
-} from "lucide-react";
+import * as lucideReact from "lucide-react";
 
 export default function HowItWorksSection() {
   const steps = [
     {
       number: "01",
-      icon: Search,
-      title: "Curated Investment Opportunities",
+      icon: lucideReact.Search,
+      title: "High-Quality, Vetted Assets",
       description:
-        "Identify and select prime real estate properties in India, meticulously vetting them for potential returns.",
+        "Minilands curates premium real estate across India, carefully selected for rental yield and capital growth.",
     },
     {
       number: "02",
-      icon: FileText,
-      title: "Transparent Property Details",
+      icon: lucideReact.FileText,
+      title: "Total Investment Transparency",
       description:
-        "Provide comprehensive property listings, including detailed documentation, financial projections, and risk assessments.",
+        "You receive full access to property details, legal documents, financials, and risk reports with complete clarity.",
     },
     {
       number: "03",
-      icon: CreditCard,
-      title: "Seamless Funding Management",
+      icon: lucideReact.CreditCard,
+      title: "Secure, Investor-Friendly Onboarding",
       description:
-        "Efficiently manage the crowdfunding process, ensuring secure and transparent transactions for investors.",
+        "Minilands offers a secure, seamless, digital onboarding process to make investing simple and fully transparent.",
     },
     {
       number: "04",
-      icon: Home,
-      title: "Hassle-Free Property Acquisition",
+      icon: lucideReact.Home,
+      title: "End-to-End Acquisition Support",
       description:
-        "Handle all legal and administrative procedures, facilitating a smooth property acquisition on behalf of investors.",
+        "Minilands manages legal formalities, due diligence, and ownership transfer, ensuring a smooth, hassle-free acquisition process.",
     },
     {
       number: "05",
-      icon: Settings,
-      title: "Dedicated Investment Management",
+      icon: lucideReact.Settings,
+      title: "Professional Asset Management",
       description:
-        "Provide ongoing property management services, including rental collection, maintenance, and tenant relations.",
+        "Experienced professionals handle tenant management, property maintenance, and daily operations to ensure optimal rental performance..",
     },
     {
       number: "06",
-      icon: DollarSign,
-      title: "Income Distribution",
+      icon: lucideReact.DollarSign,
+      title: "Consistent, Timely Returns",
       description:
-        "Distribute rental income to investors in a timely and transparent manner, ensuring maximum returns.",
+        "Rental payouts are calculated accurately, credited directly to your account, and fully transparent for all investors.",
     },
     {
       number: "07",
-      icon: TrendingUp,
-      title: "Profitable Property Disposition",
+      icon: lucideReact.TrendingUp,
+      title: "Maximized Exit Value ",
       description:
-        "Assist investors in selling their properties at optimal market prices, ensuring a profitable exit strategy.",
+        "Minilands ensures profitable, timely exits by strategically positioning your asset for maximum market value..",
     },
   ];
 
@@ -70,7 +62,7 @@ export default function HowItWorksSection() {
             How does MiniLands work?
           </h2>
           <p className="text-lg text-muted-foreground mb-4">
-            Your Path to Real Estate Investment with MiniLands
+            High-Quality, Vetted Assets
           </p>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </div>
@@ -109,10 +101,14 @@ export default function HowItWorksSection() {
               return (
                 <div
                   key={index}
-                  className={`flex items-center ${isEven ? "justify-start" : "justify-end"}`}
+                  className={`flex items-center ${
+                    isEven ? "justify-start" : "justify-end"
+                  }`}
                 >
                   <div
-                    className={`flex items-center gap-8 max-w-lg ${isEven ? "" : "flex-row-reverse"}`}
+                    className={`flex items-center gap-8 max-w-lg ${
+                      isEven ? "" : "flex-row-reverse"
+                    }`}
                   >
                     {/* Step number - Changed from green to accent color */}
                     <div className="flex items-center justify-center w-16 h-16 bg-accent text-background font-bold text-xl rounded-full flex-shrink-0 shadow-lg border-2 border-white/20">

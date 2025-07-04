@@ -1,21 +1,49 @@
 export default function YouTubeVideosSection() {
   const videos = [
     {
-      id: "dQw4w9WgXcQ",
+      id: "1j9RAgm_S6Y",
       title: "Real Estate Investment Basics: Getting Started with MiniLands",
       description:
         "Learn the fundamentals of real estate crowdfunding and how to make your first investment.",
       duration: "8:45",
     },
     {
-      id: "oHg5SJYRHA0",
+      id: "2sWB-NroqJY",
       title: "Market Analysis: Dubai Property Trends 2025",
       description:
         "Expert insights into Dubai's real estate market and emerging investment opportunities.",
       duration: "12:30",
     },
     {
-      id: "9bZkp7q19f0",
+      id: "6cCkimumA6Y",
+      title: "Building Your Investment Portfolio with Fractional Ownership",
+      description:
+        "Strategies for diversifying your portfolio through fractional real estate investments.",
+      duration: "15:20",
+    },
+    {
+      id: "tQwrJQ0fA88",
+      title: "Building Your Investment Portfolio with Fractional Ownership",
+      description:
+        "Strategies for diversifying your portfolio through fractional real estate investments.",
+      duration: "15:20",
+    },
+    {
+      id: "SJ2A0QUY7RI",
+      title: "Building Your Investment Portfolio with Fractional Ownership",
+      description:
+        "Strategies for diversifying your portfolio through fractional real estate investments.",
+      duration: "15:20",
+    },
+    {
+      id: "bfY30JVVkUs",
+      title: "Building Your Investment Portfolio with Fractional Ownership",
+      description:
+        "Strategies for diversifying your portfolio through fractional real estate investments.",
+      duration: "15:20",
+    },
+    {
+      id: "ag8t4hOd-2U",
       title: "Building Your Investment Portfolio with Fractional Ownership",
       description:
         "Strategies for diversifying your portfolio through fractional real estate investments.",
